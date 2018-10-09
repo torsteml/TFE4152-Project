@@ -1,24 +1,33 @@
 [aimspice]
 [description]
-314
+583
 Analog part
 
 .include p18_cmos_models_tt.inc
 .include p18_model_card.inc
-.include photodiode.inc
-*.param 
 
 VDD Vdd Vss dc 1.8V
 
-PD1 Vdd N1 PhotoDiode
 
+.subckt OnePixel Vdd Vdd Expose Erase NRE Out
+.param Ipd_1 = 750p
+.subckt PhotoDiode  VDD N1_R1C1
+I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
+d1 N1_R1C1 vdd dwell 1
+.model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
+Cd1 N1_R1C1 VDD 30f
+.ends 
+
+XPD1 Vdd N1 PhotoDiode
 MN1 N1 Expose N2 Vss NMOS L=L W=W
-MN2 N2 Erase Vss Vss NMOS L=L W=W
-
+MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
 CS N2 Vss 10n
-
 MP3 Vss N2 N3 Vdd PMOS L=L W=W
 MP4 N3 NRE Out Vdd PMOS L=L W=W
+.ends
+
+
+
 [dc]
 1
 VDD
