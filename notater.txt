@@ -1,0 +1,1 @@
+Vi ønsker at det skal gå mest mulig strøm gjennom M2 så derfor må sannsynligvis W være så stor som mulig og L være så liten som mulig ut ifra likningene for strøm gjennom en transistor. Se grensene i oppgaven.

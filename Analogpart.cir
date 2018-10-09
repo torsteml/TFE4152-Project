@@ -1,5 +1,35 @@
 [aimspice]
 [description]
-11
+314
 Analog part
+
+.include p18_cmos_models_tt.inc
+.include p18_model_card.inc
+.include photodiode.inc
+*.param 
+
+VDD Vdd Vss dc 1.8V
+
+PD1 Vdd N1 PhotoDiode
+
+MN1 N1 Expose N2 Vss NMOS L=L W=W
+MN2 N2 Erase Vss Vss NMOS L=L W=W
+
+CS N2 Vss 10n
+
+MP3 Vss N2 N3 Vdd PMOS L=L W=W
+MP4 N3 NRE Out Vdd PMOS L=L W=W
+[dc]
+1
+VDD
+1
+2
+0.1
+[ana]
+1 1
+0
+1 1
+1 1 0 5
+1
+vdd
 [end]
