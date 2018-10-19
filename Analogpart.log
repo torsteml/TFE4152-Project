@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Tue Oct  9 15:36:48 2018
+	Date: Fri Oct 19 12:23:19 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Analogpart.cir
 	Analysis: Transient
 
@@ -182,10 +182,10 @@
    167:  
    168:  *end of: p18_model_card.inc
    169:  
-   170:  X11 Vdd Vss Expose Erase NRE_R1 OUT1 OnePixel
-   171:  X12 Vdd Vss Expose Erase NRE_R1 OUT2 OnePixel
-   172:  X21 Vdd Vss Expose Erase NRE_R2 OUT1 OnePixel
-   173:  X22 Vdd Vss Expose Erase NRE_R2 OUT2 OnePixel
+   170:  X11 VDD 0 Expose Erase NRE_R1 OUT1 OnePixel
+   171:  X12 VDD 0 Expose Erase NRE_R1 OUT2 OnePixel
+   172:  X21 VDD 0 Expose Erase NRE_R2 OUT1 OnePixel
+   173:  X22 VDD 0 Expose Erase NRE_R2 OUT2 OnePixel
    174:  
    175:  
    176:  * This is a parametrized testbench for your pixel circuit array
@@ -229,11 +229,11 @@
    214:  
    215:  .subckt OnePixel Vdd Vss Expose Erase NRE Out
    216:  XPD1 Vdd N1 PhotoDiode
-   217:  MN1 N1 Expose N2 Vss NMOS L=L W=W
+   217:  MN1 N1 Expose N2 Vss NMOS L=2u W=10u
    218:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
    219:  CS N2 Vss 10n
-   220:  MP3 Vss N2 N3 Vdd PMOS L=L W=W
-   221:  MP4 N3 NRE Out Vdd PMOS L=L W=W
+   220:  MP3 Vss N2 N3 Vdd PMOS L=2u W=10u
+   221:  MP4 N3 NRE Out Vdd PMOS L=2u W=10u
    222:  .ends
    223:  
    224:  .subckt PhotoDiode  VDD N1_R1C1
@@ -245,7 +245,7 @@
    230:  
    231:  
    232:  
-   233:  .tran 0.001 0.060
+   233:  .tran 0.0001 0.060
 
 ***************************  Model Parameters  ****************************
 
@@ -256,7 +256,7 @@
 
 **************************  Analysis Parameters  **************************
 
-	Stepsize ............ : 0.001
+	Stepsize ............ : 0.0001
 	Final time .......... : 0.060
 	Use Initial Conditions: Off
 
@@ -268,19 +268,19 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 0
-	Number of iterations for transient analysis....: 0
-	Total number of timepoints.....................: 0
-	Number of timepoints accepted..................: 0
-	Number of timepoints rejected..................: 0
-	Total analysis time (sec)......................: 0
-	Transient analysis time (sec)..................: 0
-	Time spent in device loading (sec).............: 0
+	Total number of iterations.....................: 661
+	Number of iterations for transient analysis....: 596
+	Total number of timepoints.....................: 191
+	Number of timepoints accepted..................: 169
+	Number of timepoints rejected..................: 22
+	Total analysis time (sec)......................: 0.056
+	Transient analysis time (sec)..................: 0.053
+	Time spent in device loading (sec).............: 0.021
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
-	Time spent in matrix solving (sec).............: 0
+	Time spent in matrix solving (sec).............: 0.003
 	Time spent in transient L-U decomposition (sec): 0
-	Time spent in transient matrix solving (sec)...: 0
+	Time spent in transient matrix solving (sec)...: 0.003
 
 ***************************  Kernel Messages  *****************************
 
@@ -291,56 +291,11 @@ Warning: parameter xl not supported; value ignored
 Warning: parameter xw not supported; value ignored
 Warning: parameter xl not supported; value ignored
 Warning: parameter xw not supported; value ignored
+Warning: Pd = 0 is less than W for m:22:p4 in model pmos.
+Warning: Ps = 0 is less than W for m:22:p4 in model pmos.
 Warning: Pd = 0 is less than W for m:22:n2 in model nmos.
 Warning: Ps = 0 is less than W for m:22:n2 in model nmos.
+Warning: Pd = 0 is less than W for m:22:n1 in model nmos.
+Warning: Ps = 0 is less than W for m:22:n1 in model nmos.
 Warning: Node 1 has less than two connections
-Warning: Node vdd has no DC path to ground
-Warning: Node 11:n1 has no DC path to ground
-Warning: Node 11:n2 has no DC path to ground
-Warning: Node vss has no DC path to ground
-Warning: Node 11:n3 has no DC path to ground
-Warning: Node out1 has no DC path to ground
-Warning: Node 12:n1 has no DC path to ground
-Warning: Node 12:n2 has no DC path to ground
-Warning: Node 12:n3 has no DC path to ground
-Warning: Node out2 has no DC path to ground
-Warning: Node 21:n1 has no DC path to ground
-Warning: Node 21:n2 has no DC path to ground
-Warning: Node 21:n3 has no DC path to ground
-Warning: Node 22:n1 has no DC path to ground
-Warning: Node 22:n2 has no DC path to ground
-Warning: Node 22:n3 has no DC path to ground
-Warning: Node m:22:p4#drain has no DC path to ground
-Warning: Node m:22:p4#source has no DC path to ground
-Warning: Node m:22:p3#drain has no DC path to ground
-Warning: Node m:22:p3#source has no DC path to ground
-Warning: Node m:21:p4#drain has no DC path to ground
-Warning: Node m:21:p4#source has no DC path to ground
-Warning: Node m:21:p3#drain has no DC path to ground
-Warning: Node m:21:p3#source has no DC path to ground
-Warning: Node m:12:p4#drain has no DC path to ground
-Warning: Node m:12:p4#source has no DC path to ground
-Warning: Node m:12:p3#drain has no DC path to ground
-Warning: Node m:12:p3#source has no DC path to ground
-Warning: Node m:11:p4#drain has no DC path to ground
-Warning: Node m:11:p4#source has no DC path to ground
-Warning: Node m:11:p3#drain has no DC path to ground
-Warning: Node m:11:p3#source has no DC path to ground
-Warning: Node m:22:n2#drain has no DC path to ground
-Warning: Node m:22:n2#source has no DC path to ground
-Warning: Node m:22:n1#drain has no DC path to ground
-Warning: Node m:22:n1#source has no DC path to ground
-Warning: Node m:21:n2#drain has no DC path to ground
-Warning: Node m:21:n2#source has no DC path to ground
-Warning: Node m:21:n1#drain has no DC path to ground
-Warning: Node m:21:n1#source has no DC path to ground
-Warning: Node m:12:n2#drain has no DC path to ground
-Warning: Node m:12:n2#source has no DC path to ground
-Warning: Node m:12:n1#drain has no DC path to ground
-Warning: Node m:12:n1#source has no DC path to ground
-Warning: Node m:11:n2#drain has no DC path to ground
-Warning: Node m:11:n2#source has no DC path to ground
-Warning: Node m:11:n1#drain has no DC path to ground
-Warning: Node m:11:n1#source has no DC path to ground
-Simulation cancelled by user
 

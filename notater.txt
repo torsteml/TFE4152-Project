@@ -1,6 +1,6 @@
 Vi ønsker at M2 skal være så liten som mulig for at lekasjestrømmen skal være så liten som mulig. Dette går fordi klokka vår ikke er så rask slik at hastighet sannsynligvis ikke er et problem. Prøv og feil litt med størrelsen her.
 
-Begynn med buggerkretsen (M3 og M4) og finn ut hvor stor spenning vi kan ha på gaten til M3 før det blir problemer, ut fra dette kan vi finne ut hvor stor CS kan være i forhold til hvor mye det rekker å lade seg opp
+Begynn med bufferkretsen (M3 og M4) og finn ut hvor stor spenning vi kan ha på gaten til M3 før det blir problemer, ut fra dette kan vi finne ut hvor stor CS kan være i forhold til hvor mye det rekker å lade seg opp
 
 Lag en subcircuit av kretsen og lag fire instanser av denne, og kjør denne i testbenchen på blackboard
 
