@@ -7,13 +7,13 @@
                  *                                           *
                  *********************************************
 
-	Date: Tue Oct 23 15:46:46 2018
-	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Analogpart.cir
+	Date: Tue Oct 23 15:51:41 2018
+	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Exposecircuit.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
-     1:  Analog part
+     1:  Expose circuit
      2:  
      3:  *include p18_cmos_models_tt.inc
      4:  .param proc_delta = 1
@@ -182,76 +182,42 @@
    167:  
    168:  *end of: p18_model_card.inc
    169:  
-   170:  X11 VDD 0 Expose Erase NRE_R1 OUT1 OnePixel
-   171:  X12 VDD 0 Expose Erase NRE_R1 OUT2 OnePixel
-   172:  X21 VDD 0 Expose Erase NRE_R2 OUT1 OnePixel
-   173:  X22 VDD 0 Expose Erase NRE_R2 OUT2 OnePixel
-   174:  XLT1 VDD 0 OUT1 LoadTransistor
-   175:  XLT2 VDD 0 OUT2 LoadTransistor
-   176:  
-   177:  
-   178:  * This is a parametrized testbench for your pixel circuit array
-   179:  
-   180:  * You should at least test your circuit with:
-   181:  *	- current of 50 pA and exposure time 30 ms
-   182:  *	- current of 750 pA and exposure time 2 ms
-   183:  
-   184:  * Instructions
-   185:  * Connect EXPOSE, ERASE, NRE_R1 and NRE_R2 at the right place
-   186:  * Run a transient simulation with length 60 ms
-   187:  * Make sure outputs of pixel circuits to ADC are called OUT1 and OUT2
-   188:  * Make plots of output voltages to ADC (here called OUT1 and OUT2)
-   189:  * The voltage across internal capacitor (any pixel) is also of interest (here called OUT_SAMPLED1)
-   190:  * You should also plot the control signals EXPOSE, NRE_R1, NRE_R2 and ERASE
+   170:  .param Ipd_1 = 750p ! Photodiode current, range [50 pA, 750 pA]
+   171:  .param VDD = 1.8 ! Supply voltage
+   172:  .param EXPOSURETIME = 30m ! Exposure time, range [2 ms, 30 ms]
+   173:  
+   174:  .param TRF = {EXPOSURETIME/100} ! Risetime and falltime of EXPOSURE and ERASE signals
+   175:  .param PW = {EXPOSURETIME} ! Pulsewidth of EXPOSURE and ERASE signals
+   176:  .param PERIOD = {EXPOSURETIME*10} ! Period for testbench sources
+   177:  .param FS = 1k; ! Sampling clock frequency
+   178:  .param CLK_PERIOD = {1/FS} ! Sampling clock period
+   179:  .param EXPOSE_DLY = {CLK_PERIOD} ! Delay for EXPOSE signal
+   180:  .param ERASE_DLY = {6*CLK_PERIOD + EXPOSURETIME} ! Delay for ERASE signal
+   181:  
+   182:  
+   183:  VDD Vdd 0 dc VDD
+   184:  X1 Vdd 0 EXPOSE ERASE Out Exposecircuit
+   185:  
+   186:  VEXPOSE EXPOSE 0 dc 0 pulse(0 VDD EXPOSE_DLY TRF TRF EXPOSURETIME PERIOD)
+   187:  VERASE ERASE 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
+   188:  
+   189:  .plot V(Out)
+   190:  .plot V(EXPOSE) V(ERASE)
    191:  
-   192:  .param Ipd_1 = 50p ! Photodiode current, range [50 pA, 750 pA]
-   193:  .param VDD = 1.8 ! Supply voltage
-   194:  .param EXPOSURETIME = 30m ! Exposure time, range [2 ms, 30 ms]
-   195:  
-   196:  .param TRF = {EXPOSURETIME/100} ! Risetime and falltime of EXPOSURE and ERASE signals
-   197:  .param PW = {EXPOSURETIME} ! Pulsewidth of EXPOSURE and ERASE signals
-   198:  .param PERIOD = {EXPOSURETIME*10} ! Period for testbench sources
-   199:  .param FS = 1k; ! Sampling clock frequency
-   200:  .param CLK_PERIOD = {1/FS} ! Sampling clock period
-   201:  .param EXPOSE_DLY = {CLK_PERIOD} ! Delay for EXPOSE signal
-   202:  .param NRE_R1_DLY = {2*CLK_PERIOD + EXPOSURETIME} ! Delay for NRE_R1 signal
-   203:  .param NRE_R2_DLY = {4*CLK_PERIOD + EXPOSURETIME} ! Delay for NRE_R2 signal
-   204:  .param ERASE_DLY = {6*CLK_PERIOD + EXPOSURETIME} ! Delay for ERASE signal
-   205:  
-   206:  VDD 1 0 dc VDD
-   207:  VEXPOSE EXPOSE 0 dc 0 pulse(0 VDD EXPOSE_DLY TRF TRF EXPOSURETIME PERIOD)
-   208:  VERASE ERASE 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
-   209:  VNRE_R1 NRE_R1 0 dc 0 pulse(VDD 0 NRE_R1_DLY TRF TRF CLK_PERIOD PERIOD)
-   210:  VNRE_R2 NRE_R2 0 dc 0  pulse(VDD 0 NRE_R2_DLY TRF TRF CLK_PERIOD PERIOD)
-   211:  
-   212:  .plot V(OUT1) V(OUT2) ! signals going to ADC
-   213:  .plot V(EXPOSE) V(NRE_R1) V(NRE_R2) V(ERASE)
-   214:  .plot V(OUT_SAMPLED1)
-   215:  
-   216:  .subckt LoadTransistor Vdd Vss Gate
-   217:  MC Gate Gate Vdd Vdd PMOS L=2u W=10u
-   218:  CC Gate Vss 3p
-   219:  .ends
-   220:  
-   221:  .subckt OnePixel Vdd Vss Expose Erase NRE Out
-   222:  XPD1 Vdd N1 PhotoDiode
-   223:  MN1 N1 Expose N2 Vss NMOS L=2u W=10u
-   224:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
-   225:  CS N2 Vss 3p
-   226:  MP3 Vss N2 N3 Vdd PMOS L=2u W=10u
-   227:  MP4 N3 NRE Out Vdd PMOS L=2u W=10u
-   228:  .ends
-   229:  
-   230:  .subckt PhotoDiode  VDD N1_R1C1
-   231:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
-   232:  d1 N1_R1C1 vdd dwell 1
-   233:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
-   234:  Cd1 N1_R1C1 VDD 30f
-   235:  .ends 
-   236:  
-   237:  
-   238:  
-   239:  .tran 0.0001 0.060
+   192:  .subckt Exposecircuit Vdd Vss Expose Erase N2
+   193:  XPD1 Vdd N1 PhotoDiode
+   194:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=2u
+   195:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
+   196:  CS N2 Vss 3p
+   197:  .ends
+   198:  
+   199:  .subckt PhotoDiode  VDD N1_R1C1
+   200:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
+   201:  d1 N1_R1C1 vdd dwell 1
+   202:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
+   203:  Cd1 N1_R1C1 VDD 30f
+   204:  .ends 
+   205:  .tran 0.0001 0.060
 
 ***************************  Model Parameters  ****************************
 
@@ -274,34 +240,27 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 532
-	Number of iterations for transient analysis....: 475
-	Total number of timepoints.....................: 162
-	Number of timepoints accepted..................: 152
-	Number of timepoints rejected..................: 10
-	Total analysis time (sec)......................: 0.159
-	Transient analysis time (sec)..................: 0.147
-	Time spent in device loading (sec).............: 0.037
-	Time spent in L-U decomposition (sec)..........: 0.005
+	Total number of iterations.....................: 451
+	Number of iterations for transient analysis....: 429
+	Total number of timepoints.....................: 150
+	Number of timepoints accepted..................: 134
+	Number of timepoints rejected..................: 16
+	Total analysis time (sec)......................: 0.022
+	Transient analysis time (sec)..................: 0.022
+	Time spent in device loading (sec).............: 0.005
+	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
-	Time spent in matrix solving (sec).............: 0.004
-	Time spent in transient L-U decomposition (sec): 0.004
-	Time spent in transient matrix solving (sec)...: 0.004
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 
-Circuit: Analog part
+Circuit: Expose circuit
 
 Warning: premature EOF
 Warning: parameter xl not supported; value ignored
 Warning: parameter xw not supported; value ignored
-Warning: parameter xl not supported; value ignored
-Warning: parameter xw not supported; value ignored
-Warning: Pd = 0 is less than W for m:lt2:c in model pmos.
-Warning: Ps = 0 is less than W for m:lt2:c in model pmos.
-Warning: Pd = 0 is less than W for m:22:n2 in model nmos.
-Warning: Ps = 0 is less than W for m:22:n2 in model nmos.
-Warning: Pd = 0 is less than W for m:22:n1 in model nmos.
-Warning: Ps = 0 is less than W for m:22:n1 in model nmos.
-Warning: Node 1 has less than two connections
+Warning: Pd = 0 is less than W for m:1:n2 in model nmos.
+Warning: Ps = 0 is less than W for m:1:n2 in model nmos.
 
