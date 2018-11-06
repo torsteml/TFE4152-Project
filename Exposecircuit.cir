@@ -1,6 +1,6 @@
 [aimspice]
 [description]
-1347
+1349
 Expose circuit
 
 .include p18_cmos_models_tt.inc
@@ -25,8 +25,9 @@ X1 Vdd 0 EXPOSE ERASE Out Exposecircuit
 VEXPOSE EXPOSE 0 dc 0 pulse(0 VDD EXPOSE_DLY TRF TRF EXPOSURETIME PERIOD)
 VERASE ERASE 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
 
-.plot V(Out)
 .plot V(EXPOSE) V(ERASE)
+.plot V(Out)
+
 
 .subckt Exposecircuit Vdd Vss Expose Erase N2
 XPD1 Vdd N1 PhotoDiode

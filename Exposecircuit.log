@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Tue Oct 23 15:51:41 2018
+	Date: Fri Oct 26 10:31:55 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Exposecircuit.cir
 	Analysis: Transient
 
@@ -201,23 +201,24 @@
    186:  VEXPOSE EXPOSE 0 dc 0 pulse(0 VDD EXPOSE_DLY TRF TRF EXPOSURETIME PERIOD)
    187:  VERASE ERASE 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
    188:  
-   189:  .plot V(Out)
-   190:  .plot V(EXPOSE) V(ERASE)
+   189:  .plot V(EXPOSE) V(ERASE)
+   190:  .plot V(Out)
    191:  
-   192:  .subckt Exposecircuit Vdd Vss Expose Erase N2
-   193:  XPD1 Vdd N1 PhotoDiode
-   194:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=2u
-   195:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
-   196:  CS N2 Vss 3p
-   197:  .ends
-   198:  
-   199:  .subckt PhotoDiode  VDD N1_R1C1
-   200:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
-   201:  d1 N1_R1C1 vdd dwell 1
-   202:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
-   203:  Cd1 N1_R1C1 VDD 30f
-   204:  .ends 
-   205:  .tran 0.0001 0.060
+   192:  
+   193:  .subckt Exposecircuit Vdd Vss Expose Erase N2
+   194:  XPD1 Vdd N1 PhotoDiode
+   195:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=2u
+   196:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
+   197:  CS N2 Vss 3p
+   198:  .ends
+   199:  
+   200:  .subckt PhotoDiode  VDD N1_R1C1
+   201:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
+   202:  d1 N1_R1C1 vdd dwell 1
+   203:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
+   204:  Cd1 N1_R1C1 VDD 30f
+   205:  .ends 
+   206:  .tran 0.0001 0.060
 
 ***************************  Model Parameters  ****************************
 
@@ -245,9 +246,9 @@
 	Total number of timepoints.....................: 150
 	Number of timepoints accepted..................: 134
 	Number of timepoints rejected..................: 16
-	Total analysis time (sec)......................: 0.022
-	Transient analysis time (sec)..................: 0.022
-	Time spent in device loading (sec).............: 0.005
+	Total analysis time (sec)......................: 0.043
+	Transient analysis time (sec)..................: 0.041
+	Time spent in device loading (sec).............: 0.009
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
