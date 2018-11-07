@@ -1,0 +1,2560 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Info: VCP2876 CTRL_ex_time_TB.v : (35, 67): Implicit net declaration, symbol EXtime has not been declared in module CTRL_ex_time_TB.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: CTRL_ex_time_TB.v (35): Length of connection (1) does not match the length of port "EXtime" (6) on instance "/CTRL_ex_time_TB/timer".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.7 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 15 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 1.8 [s].
+# KERNEL: SLP loading done - time: 1.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.06, onsdag 7. november 2018
+#  Simulation has been initialized
+# add wave -noreg {/CTRL_ex_time_TB/Exp_increase}
+# add wave -noreg {/CTRL_ex_time_TB/Exp_decrease}
+# add wave -noreg {/CTRL_ex_time_TB/clk}
+# add wave -noreg {/CTRL_ex_time_TB/Reset}
+# add wave -noreg {/CTRL_ex_time_TB/clkOut}
+# add wave -noreg {/CTRL_ex_time_TB/ResetOut}
+# add wave -noreg {/CTRL_ex_time_TB/Initial}
+# add wave -noreg {/CTRL_ex_time_TB/EXtime}
+# 8 signal(s) traced.
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 0 0 0 0 x 
+# KERNEL: 5 ns 1 1 0 0 0 0 x 
+# KERNEL: 10 ns 0 0 0 0 0 0 x 
+# KERNEL: 15 ns 1 1 0 0 0 0 x 
+# KERNEL: 20 ns 0 0 0 0 0 0 x 
+# KERNEL: 25 ns 1 1 0 0 0 0 x 
+# KERNEL: 30 ns 0 0 0 0 0 0 x 
+# KERNEL: 35 ns 1 1 0 0 0 0 x 
+# KERNEL: 40 ns 0 0 0 0 0 0 x 
+# KERNEL: 45 ns 1 1 0 0 0 0 x 
+# KERNEL: 50 ns 0 0 0 0 0 0 x 
+# KERNEL: 55 ns 1 1 0 0 0 0 x 
+# KERNEL: 60 ns 0 0 0 0 0 0 x 
+# KERNEL: 65 ns 1 1 0 0 0 0 x 
+# KERNEL: 70 ns 0 0 0 0 0 0 x 
+# KERNEL: 75 ns 1 1 0 0 0 0 x 
+# KERNEL: 80 ns 0 0 0 0 0 0 x 
+# KERNEL: 85 ns 1 1 0 0 0 0 x 
+# KERNEL: 90 ns 0 0 0 0 0 0 x 
+# KERNEL: 95 ns 1 1 0 0 0 0 x 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (47): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#46_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Info: VCP2876 CTRL_ex_time_TB.v : (35, 67): Implicit net declaration, symbol EXtime has not been declared in module CTRL_ex_time_TB.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 CTRL_ex_time_TB.v : (41, 15): Undeclared identifier: reset.
+# Error: VCP2020 CTRL_ex_time_TB.v : (42, 5): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 CTRL_ex_time_TB.v : (42, 5): Syntax error. Unexpected token: end[_END].
+# Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Info: VCP2876 CTRL_ex_time_TB.v : (35, 67): Implicit net declaration, symbol EXtime has not been declared in module CTRL_ex_time_TB.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2020 CTRL_ex_time_TB.v : (42, 5): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 CTRL_ex_time_TB.v : (42, 5): Syntax error. Unexpected token: end[_END].
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Info: VCP2876 CTRL_ex_time_TB.v : (35, 67): Implicit net declaration, symbol EXtime has not been declared in module CTRL_ex_time_TB.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: CTRL_ex_time_TB.v (35): Length of connection (1) does not match the length of port "EXtime" (6) on instance "/CTRL_ex_time_TB/timer".
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 15 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.6 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.08, onsdag 7. november 2018
+#  Simulation has been initialized
+# add wave -noreg {/CTRL_ex_time_TB/Exp_increase}
+# add wave -noreg {/CTRL_ex_time_TB/Exp_decrease}
+# add wave -noreg {/CTRL_ex_time_TB/clk}
+# add wave -noreg {/CTRL_ex_time_TB/Reset}
+# add wave -noreg {/CTRL_ex_time_TB/clkOut}
+# add wave -noreg {/CTRL_ex_time_TB/ResetOut}
+# add wave -noreg {/CTRL_ex_time_TB/Initial}
+# add wave -noreg {/CTRL_ex_time_TB/EXtime}
+# 8 signal(s) traced.
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 0 0 1 1 0 0 x 
+# KERNEL: 5 ns 1 1 1 1 0 0 0 
+# KERNEL: 10 ns 0 0 1 1 0 0 0 
+# KERNEL: 15 ns 1 1 1 1 0 0 0 
+# KERNEL: 20 ns 0 0 1 1 0 0 0 
+# KERNEL: 25 ns 1 1 1 1 0 0 0 
+# KERNEL: 30 ns 0 0 1 1 0 0 0 
+# KERNEL: 35 ns 1 1 1 1 0 0 0 
+# KERNEL: 40 ns 0 0 1 1 0 0 0 
+# KERNEL: 45 ns 1 1 1 1 0 0 0 
+# KERNEL: 50 ns 0 0 1 1 0 0 0 
+# KERNEL: 55 ns 1 1 1 1 0 0 0 
+# KERNEL: 60 ns 0 0 1 1 0 0 0 
+# KERNEL: 65 ns 1 1 1 1 0 0 0 
+# KERNEL: 70 ns 0 0 1 1 0 0 0 
+# KERNEL: 75 ns 1 1 1 1 0 0 0 
+# KERNEL: 80 ns 0 0 1 1 0 0 0 
+# KERNEL: 85 ns 1 1 1 1 0 0 0 
+# KERNEL: 90 ns 0 0 1 1 0 0 0 
+# KERNEL: 95 ns 1 1 1 1 0 0 0 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (47): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#46_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 CTRL_ex_time_TB.v : (35, 13): Syntax error. Unexpected token: CTRL_ex_time[_IDENTIFIER].
+# Info: VCP2876 CTRL_ex_time_TB.v : (35, 68): Implicit net declaration, symbol EXtime has not been declared in module CTRL_ex_time_TB.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: CTRL_ex_time_TB.v (35): Length of connection (1) does not match the length of port "EXtime" (6) on instance "/CTRL_ex_time_TB/timer".
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.4 [s]
+# SLP: Finished : 0.5 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 3.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.11, onsdag 7. november 2018
+#  Simulation has been initialized
+# add wave -noreg {/CTRL_ex_time_TB/Exp_increase}
+# add wave -noreg {/CTRL_ex_time_TB/Exp_decrease}
+# add wave -noreg {/CTRL_ex_time_TB/clk}
+# add wave -noreg {/CTRL_ex_time_TB/Reset}
+# add wave -noreg {/CTRL_ex_time_TB/clkOut}
+# add wave -noreg {/CTRL_ex_time_TB/ResetOut}
+# add wave -noreg {/CTRL_ex_time_TB/EXtime}
+# 7 signal(s) traced.
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 x 
+# KERNEL: 5 ns 1 1 1 1 0 0 0 
+# KERNEL: 10 ns 0 0 1 1 0 0 0 
+# KERNEL: 15 ns 1 1 1 1 0 0 0 
+# KERNEL: 20 ns 0 0 1 1 0 0 0 
+# KERNEL: 25 ns 1 1 1 1 0 0 0 
+# KERNEL: 30 ns 0 0 1 1 0 0 0 
+# KERNEL: 35 ns 1 1 1 1 0 0 0 
+# KERNEL: 40 ns 0 0 1 1 0 0 0 
+# KERNEL: 45 ns 1 1 1 1 0 0 0 
+# KERNEL: 50 ns 0 0 1 1 0 0 0 
+# KERNEL: 55 ns 1 1 1 1 0 0 0 
+# KERNEL: 60 ns 0 0 1 1 0 0 0 
+# KERNEL: 65 ns 1 1 1 1 0 0 0 
+# KERNEL: 70 ns 0 0 1 1 0 0 0 
+# KERNEL: 75 ns 1 1 1 1 0 0 0 
+# KERNEL: 80 ns 0 0 1 1 0 0 0 
+# KERNEL: 85 ns 1 1 1 1 0 0 0 
+# KERNEL: 90 ns 0 0 1 1 0 0 0 
+# KERNEL: 95 ns 1 1 1 1 0 0 0 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (47): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#46_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: CTRL_ex_time_TB.v (35): Length of connection (1) does not match the length of port "EXtime" (6) on instance "/CTRL_ex_time_TB/timer".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 2.8 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5517 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.13, onsdag 7. november 2018
+#  Simulation has been initialized
+# add wave -noreg {/CTRL_ex_time_TB/Exp_increase}
+# add wave -noreg {/CTRL_ex_time_TB/Exp_decrease}
+# add wave -noreg {/CTRL_ex_time_TB/clk}
+# add wave -noreg {/CTRL_ex_time_TB/Reset}
+# add wave -noreg {/CTRL_ex_time_TB/clkOut}
+# add wave -noreg {/CTRL_ex_time_TB/ResetOut}
+# add wave -noreg {/CTRL_ex_time_TB/EXtime}
+# 7 signal(s) traced.
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 x 
+# KERNEL: 5 ns 1 1 1 1 0 0 0 
+# KERNEL: 10 ns 0 0 0 0 1 0 0 
+# KERNEL: 15 ns 1 1 0 0 1 0 0 
+# KERNEL: 20 ns 0 0 0 0 1 0 0 
+# KERNEL: 25 ns 1 1 0 0 1 0 0 
+# KERNEL: 26 ns 1 1 0 0 0 1 0 
+# KERNEL: 30 ns 0 0 0 0 0 1 0 
+# KERNEL: 32 ns 0 0 0 0 0 0 0 
+# KERNEL: 35 ns 1 1 0 0 0 0 0 
+# KERNEL: 40 ns 0 0 0 0 0 0 0 
+# KERNEL: 45 ns 1 1 0 0 0 0 0 
+# KERNEL: 50 ns 0 0 0 0 0 0 0 
+# KERNEL: 55 ns 1 1 0 0 0 0 0 
+# KERNEL: 60 ns 0 0 0 0 0 0 0 
+# KERNEL: 65 ns 1 1 0 0 0 0 0 
+# KERNEL: 70 ns 0 0 0 0 0 0 0 
+# KERNEL: 75 ns 1 1 0 0 0 0 0 
+# KERNEL: 80 ns 0 0 0 0 0 0 0 
+# KERNEL: 85 ns 1 1 0 0 0 0 0 
+# KERNEL: 90 ns 0 0 0 0 0 0 0 
+# KERNEL: 95 ns 1 1 0 0 0 0 0 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: CTRL_ex_time_TB.v (35): Length of connection (1) does not match the length of port "EXtime" (6) on instance "/CTRL_ex_time_TB/timer".
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.4 [s]
+# SLP: Finished : 0.5 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 3.5 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5517 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.17, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 x 
+# KERNEL: 5 ns 1 1 1 1 0 0 0 
+# KERNEL: 10 ns 0 0 0 0 1 0 0 
+# KERNEL: 15 ns 1 1 0 0 1 0 1 
+# KERNEL: 20 ns 0 0 0 0 1 0 1 
+# KERNEL: 25 ns 1 1 0 0 1 0 0 
+# KERNEL: 26 ns 1 1 0 0 0 1 0 
+# KERNEL: 30 ns 0 0 0 0 0 1 0 
+# KERNEL: 32 ns 0 0 0 0 0 0 0 
+# KERNEL: 35 ns 1 1 0 0 0 0 0 
+# KERNEL: 40 ns 0 0 0 0 0 0 0 
+# KERNEL: 45 ns 1 1 0 0 0 0 0 
+# KERNEL: 50 ns 0 0 0 0 0 0 0 
+# KERNEL: 55 ns 1 1 0 0 0 0 0 
+# KERNEL: 60 ns 0 0 0 0 0 0 0 
+# KERNEL: 65 ns 1 1 0 0 0 0 0 
+# KERNEL: 70 ns 0 0 0 0 0 0 0 
+# KERNEL: 75 ns 1 1 0 0 0 0 0 
+# KERNEL: 80 ns 0 0 0 0 0 0 0 
+# KERNEL: 85 ns 1 1 0 0 0 0 0 
+# KERNEL: 90 ns 0 0 0 0 0 0 0 
+# KERNEL: 95 ns 1 1 0 0 0 0 0 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: CTRL_ex_time_TB.v (35): Length of connection (1) does not match the length of port "EXtime" (6) on instance "/CTRL_ex_time_TB/timer".
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.18, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 x 
+# KERNEL: 5 ns 1 1 1 1 0 0 0 
+# KERNEL: 10 ns 0 0 0 0 1 0 0 
+# KERNEL: 15 ns 1 1 0 0 1 0 1 
+# KERNEL: 20 ns 0 0 0 0 1 0 1 
+# KERNEL: 25 ns 1 1 0 0 1 0 0 
+# KERNEL: 26 ns 1 1 0 0 0 0 0 
+# KERNEL: 30 ns 0 0 0 0 0 0 0 
+# KERNEL: 35 ns 1 1 0 0 0 0 0 
+# KERNEL: 40 ns 0 0 0 0 0 0 0 
+# KERNEL: 45 ns 1 1 0 0 0 0 0 
+# KERNEL: 50 ns 0 0 0 0 0 0 0 
+# KERNEL: 55 ns 1 1 0 0 0 0 0 
+# KERNEL: 60 ns 0 0 0 0 0 0 0 
+# KERNEL: 65 ns 1 1 0 0 0 0 0 
+# KERNEL: 70 ns 0 0 0 0 0 0 0 
+# KERNEL: 75 ns 1 1 0 0 0 0 0 
+# KERNEL: 80 ns 0 0 0 0 0 0 0 
+# KERNEL: 85 ns 1 1 0 0 0 0 0 
+# KERNEL: 90 ns 0 0 0 0 0 0 0 
+# KERNEL: 95 ns 1 1 0 0 0 0 0 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.7 [s]
+# SLP: Finished : 0.8 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.9 [s].
+# KERNEL: SLP loading done - time: 3.3 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.20, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 xx 
+# KERNEL: 5 ns 1 1 1 1 0 0 00 
+# KERNEL: 10 ns 0 0 0 0 1 0 00 
+# KERNEL: 15 ns 1 1 0 0 1 0 01 
+# KERNEL: 20 ns 0 0 0 0 1 0 01 
+# KERNEL: 25 ns 1 1 0 0 1 0 02 
+# KERNEL: 26 ns 1 1 0 0 0 0 02 
+# KERNEL: 30 ns 0 0 0 0 0 0 02 
+# KERNEL: 35 ns 1 1 0 0 0 0 02 
+# KERNEL: 40 ns 0 0 0 0 0 0 02 
+# KERNEL: 45 ns 1 1 0 0 0 0 02 
+# KERNEL: 50 ns 0 0 0 0 0 0 02 
+# KERNEL: 55 ns 1 1 0 0 0 0 02 
+# KERNEL: 60 ns 0 0 0 0 0 0 02 
+# KERNEL: 65 ns 1 1 0 0 0 0 02 
+# KERNEL: 70 ns 0 0 0 0 0 0 02 
+# KERNEL: 75 ns 1 1 0 0 0 0 02 
+# KERNEL: 80 ns 0 0 0 0 0 0 02 
+# KERNEL: 85 ns 1 1 0 0 0 0 02 
+# KERNEL: 90 ns 0 0 0 0 0 0 02 
+# KERNEL: 95 ns 1 1 0 0 0 0 02 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.3 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.21, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 xx 
+# KERNEL: 5 ns 1 1 1 1 0 0 00 
+# KERNEL: 10 ns 0 0 0 0 1 0 00 
+# KERNEL: 15 ns 1 1 0 0 1 0 01 
+# KERNEL: 20 ns 0 0 0 0 1 0 01 
+# KERNEL: 25 ns 1 1 0 0 1 0 02 
+# KERNEL: 30 ns 0 0 0 0 1 0 02 
+# KERNEL: 35 ns 1 1 0 0 1 0 03 
+# KERNEL: 40 ns 0 0 0 0 1 0 03 
+# KERNEL: 45 ns 1 1 0 0 1 0 04 
+# KERNEL: 50 ns 0 0 0 0 1 0 04 
+# KERNEL: 55 ns 1 1 0 0 0 0 04 
+# KERNEL: 60 ns 0 0 0 0 0 0 04 
+# KERNEL: 65 ns 1 1 0 0 0 0 04 
+# KERNEL: 70 ns 0 0 0 0 0 0 04 
+# KERNEL: 75 ns 1 1 0 0 0 0 04 
+# KERNEL: 80 ns 0 0 0 0 0 0 04 
+# KERNEL: 85 ns 1 1 0 0 0 0 04 
+# KERNEL: 90 ns 0 0 0 0 0 0 04 
+# KERNEL: 95 ns 1 1 0 0 0 0 04 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.7 [s]
+# SLP: Finished : 0.8 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.9 [s].
+# KERNEL: SLP loading done - time: 4.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5517 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.24, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run @100ns
+# KERNEL: 0 ns 0 0 1 1 0 0 xx 
+# KERNEL: 5 ns 1 1 1 1 0 0 02 
+# KERNEL: 10 ns 0 0 0 0 1 0 02 
+# KERNEL: 15 ns 1 1 0 0 1 0 03 
+# KERNEL: 20 ns 0 0 0 0 1 0 03 
+# KERNEL: 25 ns 1 1 0 0 1 0 04 
+# KERNEL: 30 ns 0 0 0 0 1 0 04 
+# KERNEL: 35 ns 1 1 0 0 1 0 05 
+# KERNEL: 40 ns 0 0 0 0 1 0 05 
+# KERNEL: 45 ns 1 1 0 0 1 0 06 
+# KERNEL: 50 ns 0 0 0 0 1 0 06 
+# KERNEL: 55 ns 1 1 0 0 1 0 07 
+# KERNEL: 57 ns 1 1 0 0 0 1 07 
+# KERNEL: 60 ns 0 0 0 0 0 1 07 
+# KERNEL: 65 ns 1 1 0 0 0 1 06 
+# KERNEL: 70 ns 0 0 0 0 0 1 06 
+# KERNEL: 74 ns 0 0 0 0 1 1 06 
+# KERNEL: 75 ns 1 1 0 0 1 1 07 
+# KERNEL: 80 ns 0 0 0 0 1 1 07 
+# KERNEL: 85 ns 1 1 0 0 1 1 08 
+# KERNEL: 86 ns 1 1 0 0 0 0 08 
+# KERNEL: 90 ns 0 0 0 0 0 0 08 
+# KERNEL: 95 ns 1 1 0 0 0 0 08 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 100 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 100 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 3.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5517 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.26, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 0 0 1 1 0 0 xx 
+# KERNEL: 5 ns 1 1 1 1 0 0 02 
+# KERNEL: 10 ns 0 0 0 0 1 0 02 
+# KERNEL: 15 ns 1 1 0 0 1 0 03 
+# KERNEL: 20 ns 0 0 0 0 1 0 03 
+# KERNEL: 22 ns 0 0 0 0 0 1 03 
+# KERNEL: 25 ns 1 1 0 0 0 1 02 
+# KERNEL: 30 ns 0 0 0 0 0 1 02 
+# KERNEL: 35 ns 1 1 0 0 0 1 01 
+# KERNEL: 40 ns 0 0 0 0 0 1 01 
+# KERNEL: 44 ns 0 0 0 0 1 1 01 
+# KERNEL: 45 ns 1 1 0 0 1 1 02 
+# KERNEL: 50 ns 0 0 0 0 1 1 02 
+# KERNEL: 55 ns 1 1 0 0 1 1 03 
+# KERNEL: 60 ns 0 0 0 0 1 1 03 
+# KERNEL: 65 ns 1 1 0 0 1 1 04 
+# KERNEL: 70 ns 0 0 0 0 1 1 04 
+# KERNEL: 75 ns 1 1 0 0 1 1 05 
+# KERNEL: 80 ns 0 0 0 0 1 1 05 
+# KERNEL: 85 ns 1 1 0 0 1 1 06 
+# KERNEL: 90 ns 0 0 0 0 1 1 06 
+# KERNEL: 95 ns 1 1 0 0 1 1 07 
+# KERNEL: 100 ns 0 0 0 0 1 1 07 
+# KERNEL: 105 ns 1 1 0 0 1 1 08 
+# KERNEL: 110 ns 0 0 0 0 1 1 08 
+# KERNEL: 115 ns 1 1 0 0 1 1 09 
+# KERNEL: 120 ns 0 0 0 0 1 1 09 
+# KERNEL: 125 ns 1 1 0 0 1 1 0a 
+# KERNEL: 130 ns 0 0 0 0 1 1 0a 
+# KERNEL: 135 ns 1 1 0 0 1 1 0b 
+# KERNEL: 140 ns 0 0 0 0 1 1 0b 
+# KERNEL: 145 ns 1 1 0 0 1 1 0c 
+# KERNEL: 150 ns 0 0 0 0 1 1 0c 
+# KERNEL: 155 ns 1 1 0 0 1 1 0d 
+# KERNEL: 160 ns 0 0 0 0 1 1 0d 
+# KERNEL: 165 ns 1 1 0 0 1 1 0e 
+# KERNEL: 170 ns 0 0 0 0 1 1 0e 
+# KERNEL: 175 ns 1 1 0 0 1 1 0f 
+# KERNEL: 180 ns 0 0 0 0 1 1 0f 
+# KERNEL: 185 ns 1 1 0 0 1 1 10 
+# KERNEL: 190 ns 0 0 0 0 1 1 10 
+# KERNEL: 195 ns 1 1 0 0 1 1 11 
+# KERNEL: 200 ns 0 0 0 0 1 1 11 
+# KERNEL: 205 ns 1 1 0 0 1 1 12 
+# KERNEL: 210 ns 0 0 0 0 1 1 12 
+# KERNEL: 215 ns 1 1 0 0 1 1 13 
+# KERNEL: 220 ns 0 0 0 0 1 1 13 
+# KERNEL: 225 ns 1 1 0 0 1 1 14 
+# KERNEL: 230 ns 0 0 0 0 1 1 14 
+# KERNEL: 235 ns 1 1 0 0 1 1 15 
+# KERNEL: 240 ns 0 0 0 0 1 1 15 
+# KERNEL: 245 ns 1 1 0 0 1 1 16 
+# KERNEL: 250 ns 0 0 0 0 1 1 16 
+# KERNEL: 255 ns 1 1 0 0 1 1 17 
+# KERNEL: 260 ns 0 0 0 0 1 1 17 
+# KERNEL: 265 ns 1 1 0 0 1 1 18 
+# KERNEL: 270 ns 0 0 0 0 1 1 18 
+# KERNEL: 275 ns 1 1 0 0 1 1 19 
+# KERNEL: 280 ns 0 0 0 0 1 1 19 
+# KERNEL: 285 ns 1 1 0 0 1 1 1a 
+# KERNEL: 290 ns 0 0 0 0 1 1 1a 
+# KERNEL: 295 ns 1 1 0 0 1 1 1b 
+# KERNEL: 300 ns 0 0 0 0 1 1 1b 
+# KERNEL: 305 ns 1 1 0 0 1 1 1c 
+# KERNEL: 310 ns 0 0 0 0 1 1 1c 
+# KERNEL: 315 ns 1 1 0 0 1 1 1d 
+# KERNEL: 320 ns 0 0 0 0 1 1 1d 
+# KERNEL: 325 ns 1 1 0 0 1 1 1e 
+# KERNEL: 330 ns 0 0 0 0 1 1 1e 
+# KERNEL: 335 ns 1 1 0 0 1 1 1f 
+# KERNEL: 340 ns 0 0 0 0 1 1 1f 
+# KERNEL: 345 ns 1 1 0 0 1 1 1f 
+# KERNEL: 350 ns 0 0 0 0 1 1 1f 
+# KERNEL: 355 ns 1 1 0 0 1 1 1f 
+# KERNEL: 360 ns 0 0 0 0 1 1 1f 
+# KERNEL: 365 ns 1 1 0 0 1 1 1f 
+# KERNEL: 370 ns 0 0 0 0 1 1 1f 
+# KERNEL: 375 ns 1 1 0 0 1 1 1f 
+# KERNEL: 380 ns 0 0 0 0 1 1 1f 
+# KERNEL: 385 ns 1 1 0 0 1 1 1f 
+# KERNEL: 390 ns 0 0 0 0 1 1 1f 
+# KERNEL: 394 ns 0 0 0 0 0 0 1f 
+# KERNEL: 395 ns 1 1 0 0 0 0 1f 
+# KERNEL: 400 ns 0 0 0 0 0 0 1f 
+# KERNEL: 405 ns 1 1 0 0 0 0 1f 
+# KERNEL: 410 ns 0 0 0 0 0 0 1f 
+# KERNEL: 415 ns 1 1 0 0 0 0 1f 
+# KERNEL: 420 ns 0 0 0 0 0 0 1f 
+# KERNEL: 425 ns 1 1 0 0 0 0 1f 
+# KERNEL: 430 ns 0 0 0 0 0 0 1f 
+# KERNEL: 435 ns 1 1 0 0 0 0 1f 
+# KERNEL: 440 ns 0 0 0 0 0 0 1f 
+# KERNEL: 445 ns 1 1 0 0 0 0 1f 
+# KERNEL: 450 ns 0 0 0 0 0 0 1f 
+# KERNEL: 455 ns 1 1 0 0 0 0 1f 
+# KERNEL: 460 ns 0 0 0 0 0 0 1f 
+# KERNEL: 465 ns 1 1 0 0 0 0 1f 
+# KERNEL: 470 ns 0 0 0 0 0 0 1f 
+# KERNEL: 475 ns 1 1 0 0 0 0 1f 
+# KERNEL: 480 ns 0 0 0 0 0 0 1f 
+# KERNEL: 485 ns 1 1 0 0 0 0 1f 
+# KERNEL: 490 ns 0 0 0 0 0 0 1f 
+# KERNEL: 495 ns 1 1 0 0 0 0 1f 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+CTRL_ex_time_TB CTRL_ex_time_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 14 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 4.6 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5517 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  18.33, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 0 0 1 1 0 0 xx 
+# KERNEL: 5 ns 1 1 1 1 0 0 02 
+# KERNEL: 10 ns 0 0 0 0 1 0 02 
+# KERNEL: 15 ns 1 1 0 0 1 0 03 
+# KERNEL: 20 ns 0 0 0 0 1 0 03 
+# KERNEL: 22 ns 0 0 0 0 0 1 03 
+# KERNEL: 25 ns 1 1 0 0 0 1 02 
+# KERNEL: 30 ns 0 0 0 0 0 1 02 
+# KERNEL: 35 ns 1 1 0 0 0 1 02 
+# KERNEL: 40 ns 0 0 0 0 0 1 02 
+# KERNEL: 44 ns 0 0 0 0 1 1 02 
+# KERNEL: 45 ns 1 1 0 0 1 1 03 
+# KERNEL: 50 ns 0 0 0 0 1 1 03 
+# KERNEL: 55 ns 1 1 0 0 1 1 04 
+# KERNEL: 60 ns 0 0 0 0 1 1 04 
+# KERNEL: 65 ns 1 1 0 0 1 1 05 
+# KERNEL: 70 ns 0 0 0 0 1 1 05 
+# KERNEL: 75 ns 1 1 0 0 1 1 06 
+# KERNEL: 80 ns 0 0 0 0 1 1 06 
+# KERNEL: 85 ns 1 1 0 0 1 1 07 
+# KERNEL: 90 ns 0 0 0 0 1 1 07 
+# KERNEL: 95 ns 1 1 0 0 1 1 08 
+# KERNEL: 100 ns 0 0 0 0 1 1 08 
+# KERNEL: 105 ns 1 1 0 0 1 1 09 
+# KERNEL: 110 ns 0 0 0 0 1 1 09 
+# KERNEL: 115 ns 1 1 0 0 1 1 0a 
+# KERNEL: 120 ns 0 0 0 0 1 1 0a 
+# KERNEL: 125 ns 1 1 0 0 1 1 0b 
+# KERNEL: 130 ns 0 0 0 0 1 1 0b 
+# KERNEL: 135 ns 1 1 0 0 1 1 0c 
+# KERNEL: 140 ns 0 0 0 0 1 1 0c 
+# KERNEL: 145 ns 1 1 0 0 1 1 0d 
+# KERNEL: 150 ns 0 0 0 0 1 1 0d 
+# KERNEL: 155 ns 1 1 0 0 1 1 0e 
+# KERNEL: 160 ns 0 0 0 0 1 1 0e 
+# KERNEL: 165 ns 1 1 0 0 1 1 0f 
+# KERNEL: 170 ns 0 0 0 0 1 1 0f 
+# KERNEL: 175 ns 1 1 0 0 1 1 10 
+# KERNEL: 180 ns 0 0 0 0 1 1 10 
+# KERNEL: 185 ns 1 1 0 0 1 1 11 
+# KERNEL: 190 ns 0 0 0 0 1 1 11 
+# KERNEL: 195 ns 1 1 0 0 1 1 12 
+# KERNEL: 200 ns 0 0 0 0 1 1 12 
+# KERNEL: 205 ns 1 1 0 0 1 1 13 
+# KERNEL: 210 ns 0 0 0 0 1 1 13 
+# KERNEL: 215 ns 1 1 0 0 1 1 14 
+# KERNEL: 220 ns 0 0 0 0 1 1 14 
+# KERNEL: 225 ns 1 1 0 0 1 1 15 
+# KERNEL: 230 ns 0 0 0 0 1 1 15 
+# KERNEL: 235 ns 1 1 0 0 1 1 16 
+# KERNEL: 240 ns 0 0 0 0 1 1 16 
+# KERNEL: 245 ns 1 1 0 0 1 1 17 
+# KERNEL: 250 ns 0 0 0 0 1 1 17 
+# KERNEL: 255 ns 1 1 0 0 1 1 18 
+# KERNEL: 260 ns 0 0 0 0 1 1 18 
+# KERNEL: 265 ns 1 1 0 0 1 1 19 
+# KERNEL: 270 ns 0 0 0 0 1 1 19 
+# KERNEL: 275 ns 1 1 0 0 1 1 1a 
+# KERNEL: 280 ns 0 0 0 0 1 1 1a 
+# KERNEL: 285 ns 1 1 0 0 1 1 1b 
+# KERNEL: 290 ns 0 0 0 0 1 1 1b 
+# KERNEL: 295 ns 1 1 0 0 1 1 1c 
+# KERNEL: 300 ns 0 0 0 0 1 1 1c 
+# KERNEL: 305 ns 1 1 0 0 1 1 1d 
+# KERNEL: 310 ns 0 0 0 0 1 1 1d 
+# KERNEL: 315 ns 1 1 0 0 1 1 1e 
+# KERNEL: 320 ns 0 0 0 0 1 1 1e 
+# KERNEL: 325 ns 1 1 0 0 1 1 1e 
+# KERNEL: 330 ns 0 0 0 0 1 1 1e 
+# KERNEL: 335 ns 1 1 0 0 1 1 1e 
+# KERNEL: 340 ns 0 0 0 0 1 1 1e 
+# KERNEL: 345 ns 1 1 0 0 1 1 1e 
+# KERNEL: 350 ns 0 0 0 0 1 1 1e 
+# KERNEL: 355 ns 1 1 0 0 1 1 1e 
+# KERNEL: 360 ns 0 0 0 0 1 1 1e 
+# KERNEL: 365 ns 1 1 0 0 1 1 1e 
+# KERNEL: 370 ns 0 0 0 0 1 1 1e 
+# KERNEL: 375 ns 1 1 0 0 1 1 1e 
+# KERNEL: 380 ns 0 0 0 0 1 1 1e 
+# KERNEL: 385 ns 1 1 0 0 1 1 1e 
+# KERNEL: 390 ns 0 0 0 0 1 1 1e 
+# KERNEL: 394 ns 0 0 0 0 0 0 1e 
+# KERNEL: 395 ns 1 1 0 0 0 0 1e 
+# KERNEL: 400 ns 0 0 0 0 0 0 1e 
+# KERNEL: 405 ns 1 1 0 0 0 0 1e 
+# KERNEL: 410 ns 0 0 0 0 0 0 1e 
+# KERNEL: 415 ns 1 1 0 0 0 0 1e 
+# KERNEL: 420 ns 0 0 0 0 0 0 1e 
+# KERNEL: 425 ns 1 1 0 0 0 0 1e 
+# KERNEL: 430 ns 0 0 0 0 0 0 1e 
+# KERNEL: 435 ns 1 1 0 0 0 0 1e 
+# KERNEL: 440 ns 0 0 0 0 0 0 1e 
+# KERNEL: 445 ns 1 1 0 0 0 0 1e 
+# KERNEL: 450 ns 0 0 0 0 0 0 1e 
+# KERNEL: 455 ns 1 1 0 0 0 0 1e 
+# KERNEL: 460 ns 0 0 0 0 0 0 1e 
+# KERNEL: 465 ns 1 1 0 0 0 0 1e 
+# KERNEL: 470 ns 0 0 0 0 0 0 1e 
+# KERNEL: 475 ns 1 1 0 0 0 0 1e 
+# KERNEL: 480 ns 0 0 0 0 0 0 1e 
+# KERNEL: 485 ns 1 1 0 0 0 0 1e 
+# KERNEL: 490 ns 0 0 0 0 0 0 1e 
+# KERNEL: 495 ns 1 1 0 0 0 0 1e 
+# RUNTIME: Info: RUNTIME_0068 CTRL_ex_time_TB.v (53): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /CTRL_ex_time_TB,  Process: @INITIAL#52_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 FSM_ex_control.v : (43, 24): Undeclared identifier: clk.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_ff[_ALWAYS_FF]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Error: VCP2020 FSM_ex_control.v : (48, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (48, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 5 Errors 0 Warnings  Analysis time: 1[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 FSM_ex_control.v : (43, 24): Undeclared identifier: clk.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_ff[_ALWAYS_FF]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Error: VCP2020 FSM_ex_control.v : (48, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (48, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 5 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_ff[_ALWAYS_FF]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Error: VCP2020 FSM_ex_control.v : (48, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (48, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 4 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_ff[_ALWAYS_FF]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Error: VCP2020 FSM_ex_control.v : (48, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (48, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 4 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_comb[_ALWAYS_COMB]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Error: VCP2677 FSM_ex_control.v : (44, 31): Blocking statements and blocking timing and event controls are not allowed in an always_comb block.
+# Error: VCP2020 FSM_ex_control.v : (47, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (47, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 5 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Error: VCP2020 FSM_ex_control.v : (47, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (47, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 4 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (44, 15): Syntax error. Unexpected token: negedge[_NEGEDGE].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2858 FSM_ex_control.v : (45, 19): Erase is not a valid left-hand side of a procedural assignment.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2858 FSM_ex_control.v : (45, 18): Erase is not a valid left-hand side of a procedural assignment.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_ff[_ALWAYS_FF]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2020 FSM_ex_control.v : (47, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (47, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2020 FSM_ex_control.v : (48, 10): begin...end pair(s) mismatch detected. 1 <end> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (48, 10): Syntax error. Unexpected token: endmodule[_ENDMODULE].
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control.v : (44, 5): Syntax error. Unexpected token: always_ff[_ALWAYS_FF]. This is a SystemVerilog keyword since IEEE Std 1800-2005 and cannot be used as an identifier. Use -v2k5, -v2k or -v95 argument for compilation.
+# Error: VCP2020 FSM_ex_control.v : (47, 1): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 FSM_ex_control.v : (47, 1): Syntax error. Unexpected token: end[_END].
+# Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (42, 8): Syntax error. Unexpected token: =.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (43, 8): Syntax error. Unexpected token: =.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (43, 8): Syntax error. Unexpected token: =.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (43, 9): Syntax error. Unexpected token: <=[O_LESSEQU].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control_TB.v : (16, 15): Syntax error. Unexpected token: FSM_ex_control[_IDENTIFIER].
+# Info: VCP2876 FSM_ex_control_TB.v : (16, 83): Implicit net declaration, symbol Start has not been declared in module FSM_ex_control_TB.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2679 FSM_ex_control.v : (48, 9): No blocking timing control allowed in always_ff.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2679 FSM_ex_control.v : (48, 9): No blocking timing control allowed in always_ff.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2679 FSM_ex_control.v : (48, 9): No blocking timing control allowed in always_ff.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2679 FSM_ex_control.v : (48, 9): No blocking timing control allowed in always_ff.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control_TB.v : (16, 15): Syntax error. Unexpected token: FSM_ex_control[_IDENTIFIER].
+# Info: VCP2876 FSM_ex_control_TB.v : (16, 83): Implicit net declaration, symbol Start has not been declared in module FSM_ex_control_TB.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control_TB.v : (16, 15): Syntax error. Unexpected token: FSM_ex_control[_IDENTIFIER].
+# Info: VCP2876 FSM_ex_control_TB.v : (16, 83): Implicit net declaration, symbol Start has not been declared in module FSM_ex_control_TB.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v $dsn/src/CTRL_ex_time_TB.v $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control_TB.v : (20, 5): Syntax error. Unexpected token: initial[_INITIAL].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 1[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control_TB.v : (20, 5): Syntax error. Unexpected token: initial[_INITIAL].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 FSM_ex_control_TB.v : (19, 62): Undeclared identifier: clkOut.
+# Error: VCP5103 FSM_ex_control_TB.v : (19, 77): Undeclared identifier: ResetOut.
+# Error: VCP5103 FSM_ex_control_TB.v : (19, 90): Undeclared identifier: Exp_increase.
+# Error: VCP5103 FSM_ex_control_TB.v : (19, 103): Undeclared identifier: Exp_decrease.
+# Error: VCP5103 FSM_ex_control_TB.v : (19, 110): Undeclared identifier: EXtime.
+# Warning: VCP7126 FSM_ex_control_TB.v : (19, 110): Null argument passed with format specifier %h.
+# Warning: VCP7126 FSM_ex_control_TB.v : (19, 110): Null argument passed with format specifier %h.
+# Warning: VCP7126 FSM_ex_control_TB.v : (19, 110): Null argument passed with format specifier %h.
+# Warning: VCP7126 FSM_ex_control_TB.v : (19, 110): Null argument passed with format specifier %h.
+# Warning: VCP7126 FSM_ex_control_TB.v : (19, 110): Null argument passed with format specifier %h.
+# Compile failure 5 Errors 5 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/CTRL_ex_time_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module CTRL_ex_time found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: CTRL_ex_time_TB.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control_TB.v : (20, 5): Syntax error. Unexpected token: initial[_INITIAL].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control.
+# $root top modules: Timer_counter FSM_ex_control CTRL_ex_time_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2000 FSM_ex_control_TB.v : (20, 5): Syntax error. Unexpected token: initial[_INITIAL].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control_TB.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.4 [s].
+# KERNEL: SLP loading done - time: 1.7 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4102 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.27, onsdag 7. november 2018
+#  Simulation has been initialized
+# add wave -noreg {/FSM_ex_control_TB/Init}
+# add wave -noreg {/FSM_ex_control_TB/clk}
+# add wave -noreg {/FSM_ex_control_TB/Reset}
+# add wave -noreg {/FSM_ex_control_TB/Ovf5}
+# add wave -noreg {/FSM_ex_control_TB/NRE_1}
+# add wave -noreg {/FSM_ex_control_TB/NRE_2}
+# add wave -noreg {/FSM_ex_control_TB/ADC}
+# add wave -noreg {/FSM_ex_control_TB/Expose}
+# add wave -noreg {/FSM_ex_control_TB/Erase}
+# add wave -noreg {/FSM_ex_control_TB/Start}
+# 10 signal(s) traced.
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 x x z z z z 0 z x
+# KERNEL: 10 ns 0 x x z z z z 1 z x
+# KERNEL: 20 ns 0 x x z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control_TB.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.4 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4102 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.28, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 0 x z z z z 0 z x
+# KERNEL: 5 ns 1 1 1 z z z z 0 z x
+# KERNEL: 10 ns 0 0 1 z z z z 1 z x
+# KERNEL: 15 ns 0 1 0 z z z z 1 z x
+# KERNEL: 20 ns 0 0 0 z z z z 0 z x
+# KERNEL: 25 ns 0 1 0 z z z z 0 z x
+# KERNEL: 30 ns 0 0 0 z z z z 0 z x
+# KERNEL: 35 ns 0 1 0 z z z z 0 z x
+# KERNEL: 40 ns 0 0 0 z z z z 0 z x
+# KERNEL: 45 ns 0 1 0 z z z z 0 z x
+# KERNEL: 50 ns 0 0 0 z z z z 0 z x
+# KERNEL: 55 ns 0 1 0 z z z z 0 z x
+# KERNEL: 60 ns 0 0 0 z z z z 0 z x
+# KERNEL: 65 ns 0 1 0 z z z z 0 z x
+# KERNEL: 70 ns 0 0 0 z z z z 0 z x
+# KERNEL: 75 ns 0 1 0 z z z z 0 z x
+# KERNEL: 80 ns 0 0 0 z z z z 0 z x
+# KERNEL: 85 ns 0 1 0 z z z z 0 z x
+# KERNEL: 90 ns 0 0 0 z z z z 0 z x
+# KERNEL: 95 ns 0 1 0 z z z z 0 z x
+# KERNEL: 100 ns 0 0 0 z z z z 0 z x
+# KERNEL: 105 ns 0 1 0 z z z z 0 z x
+# KERNEL: 110 ns 0 0 0 z z z z 0 z x
+# KERNEL: 115 ns 0 1 0 z z z z 0 z x
+# KERNEL: 120 ns 0 0 0 z z z z 0 z x
+# KERNEL: 125 ns 0 1 0 z z z z 0 z x
+# KERNEL: 130 ns 0 0 0 z z z z 0 z x
+# KERNEL: 135 ns 0 1 0 z z z z 0 z x
+# KERNEL: 140 ns 0 0 0 z z z z 0 z x
+# KERNEL: 145 ns 0 1 0 z z z z 0 z x
+# KERNEL: 150 ns 0 0 0 z z z z 0 z x
+# KERNEL: 155 ns 0 1 0 z z z z 0 z x
+# KERNEL: 160 ns 0 0 0 z z z z 0 z x
+# KERNEL: 165 ns 0 1 0 z z z z 0 z x
+# KERNEL: 170 ns 0 0 0 z z z z 0 z x
+# KERNEL: 175 ns 0 1 0 z z z z 0 z x
+# KERNEL: 180 ns 0 0 0 z z z z 0 z x
+# KERNEL: 185 ns 0 1 0 z z z z 0 z x
+# KERNEL: 190 ns 0 0 0 z z z z 0 z x
+# KERNEL: 195 ns 0 1 0 z z z z 0 z x
+# KERNEL: 200 ns 0 0 0 z z z z 0 z x
+# KERNEL: 205 ns 0 1 0 z z z z 0 z x
+# KERNEL: 210 ns 0 0 0 z z z z 0 z x
+# KERNEL: 215 ns 0 1 0 z z z z 0 z x
+# KERNEL: 220 ns 0 0 0 z z z z 0 z x
+# KERNEL: 225 ns 0 1 0 z z z z 0 z x
+# KERNEL: 230 ns 0 0 0 z z z z 0 z x
+# KERNEL: 235 ns 0 1 0 z z z z 0 z x
+# KERNEL: 240 ns 0 0 0 z z z z 0 z x
+# KERNEL: 245 ns 0 1 0 z z z z 0 z x
+# KERNEL: 250 ns 0 0 0 z z z z 0 z x
+# KERNEL: 255 ns 0 1 0 z z z z 0 z x
+# KERNEL: 260 ns 0 0 0 z z z z 0 z x
+# KERNEL: 265 ns 0 1 0 z z z z 0 z x
+# KERNEL: 270 ns 0 0 0 z z z z 0 z x
+# KERNEL: 275 ns 0 1 0 z z z z 0 z x
+# KERNEL: 280 ns 0 0 0 z z z z 0 z x
+# KERNEL: 285 ns 0 1 0 z z z z 0 z x
+# KERNEL: 290 ns 0 0 0 z z z z 0 z x
+# KERNEL: 295 ns 0 1 0 z z z z 0 z x
+# KERNEL: 300 ns 0 0 0 z z z z 0 z x
+# KERNEL: 305 ns 0 1 0 z z z z 0 z x
+# KERNEL: 310 ns 0 0 0 z z z z 0 z x
+# KERNEL: 315 ns 0 1 0 z z z z 0 z x
+# KERNEL: 320 ns 0 0 0 z z z z 0 z x
+# KERNEL: 325 ns 0 1 0 z z z z 0 z x
+# KERNEL: 330 ns 0 0 0 z z z z 0 z x
+# KERNEL: 335 ns 0 1 0 z z z z 0 z x
+# KERNEL: 340 ns 0 0 0 z z z z 0 z x
+# KERNEL: 345 ns 0 1 0 z z z z 0 z x
+# KERNEL: 350 ns 0 0 0 z z z z 0 z x
+# KERNEL: 355 ns 0 1 0 z z z z 0 z x
+# KERNEL: 360 ns 0 0 0 z z z z 0 z x
+# KERNEL: 365 ns 0 1 0 z z z z 0 z x
+# KERNEL: 370 ns 0 0 0 z z z z 0 z x
+# KERNEL: 375 ns 0 1 0 z z z z 0 z x
+# KERNEL: 380 ns 0 0 0 z z z z 0 z x
+# KERNEL: 385 ns 0 1 0 z z z z 0 z x
+# KERNEL: 390 ns 0 0 0 z z z z 0 z x
+# KERNEL: 395 ns 0 1 0 z z z z 0 z x
+# KERNEL: 400 ns 0 0 0 z z z z 0 z x
+# KERNEL: 405 ns 0 1 0 z z z z 0 z x
+# KERNEL: 410 ns 0 0 0 z z z z 0 z x
+# KERNEL: 415 ns 0 1 0 z z z z 0 z x
+# KERNEL: 420 ns 0 0 0 z z z z 0 z x
+# KERNEL: 425 ns 0 1 0 z z z z 0 z x
+# KERNEL: 430 ns 0 0 0 z z z z 0 z x
+# KERNEL: 435 ns 0 1 0 z z z z 0 z x
+# KERNEL: 440 ns 0 0 0 z z z z 0 z x
+# KERNEL: 445 ns 0 1 0 z z z z 0 z x
+# KERNEL: 450 ns 0 0 0 z z z z 0 z x
+# KERNEL: 455 ns 0 1 0 z z z z 0 z x
+# KERNEL: 460 ns 0 0 0 z z z z 0 z x
+# KERNEL: 465 ns 0 1 0 z z z z 0 z x
+# KERNEL: 470 ns 0 0 0 z z z z 0 z x
+# KERNEL: 475 ns 0 1 0 z z z z 0 z x
+# KERNEL: 480 ns 0 0 0 z z z z 0 z x
+# KERNEL: 485 ns 0 1 0 z z z z 0 z x
+# KERNEL: 490 ns 0 0 0 z z z z 0 z x
+# KERNEL: 495 ns 0 1 0 z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control_TB.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Info: VCP2113 Module FSM_ex_control found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# Unit top modules: FSM_ex_control_TB.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.4 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4102 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.29, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 0 x z z z z 0 z x
+# KERNEL: 5 ns 1 1 1 z z z z 0 z x
+# KERNEL: 10 ns 1 0 1 z z z z 0 z x
+# KERNEL: 15 ns 0 1 0 z z z z 1 z x
+# KERNEL: 20 ns 0 0 0 z z z z 1 z x
+# KERNEL: 25 ns 0 1 0 z z z z 0 z x
+# KERNEL: 30 ns 0 0 0 z z z z 0 z x
+# KERNEL: 35 ns 0 1 0 z z z z 0 z x
+# KERNEL: 40 ns 0 0 0 z z z z 0 z x
+# KERNEL: 45 ns 0 1 0 z z z z 0 z x
+# KERNEL: 50 ns 0 0 0 z z z z 0 z x
+# KERNEL: 55 ns 0 1 0 z z z z 0 z x
+# KERNEL: 60 ns 0 0 0 z z z z 0 z x
+# KERNEL: 65 ns 0 1 0 z z z z 0 z x
+# KERNEL: 70 ns 0 0 0 z z z z 0 z x
+# KERNEL: 75 ns 0 1 0 z z z z 0 z x
+# KERNEL: 80 ns 0 0 0 z z z z 0 z x
+# KERNEL: 85 ns 0 1 0 z z z z 0 z x
+# KERNEL: 90 ns 0 0 0 z z z z 0 z x
+# KERNEL: 95 ns 0 1 0 z z z z 0 z x
+# KERNEL: 100 ns 0 0 0 z z z z 0 z x
+# KERNEL: 105 ns 0 1 0 z z z z 0 z x
+# KERNEL: 110 ns 0 0 0 z z z z 0 z x
+# KERNEL: 115 ns 0 1 0 z z z z 0 z x
+# KERNEL: 120 ns 0 0 0 z z z z 0 z x
+# KERNEL: 125 ns 0 1 0 z z z z 0 z x
+# KERNEL: 130 ns 0 0 0 z z z z 0 z x
+# KERNEL: 135 ns 0 1 0 z z z z 0 z x
+# KERNEL: 140 ns 0 0 0 z z z z 0 z x
+# KERNEL: 145 ns 0 1 0 z z z z 0 z x
+# KERNEL: 150 ns 0 0 0 z z z z 0 z x
+# KERNEL: 155 ns 0 1 0 z z z z 0 z x
+# KERNEL: 160 ns 0 0 0 z z z z 0 z x
+# KERNEL: 165 ns 0 1 0 z z z z 0 z x
+# KERNEL: 170 ns 0 0 0 z z z z 0 z x
+# KERNEL: 175 ns 0 1 0 z z z z 0 z x
+# KERNEL: 180 ns 0 0 0 z z z z 0 z x
+# KERNEL: 185 ns 0 1 0 z z z z 0 z x
+# KERNEL: 190 ns 0 0 0 z z z z 0 z x
+# KERNEL: 195 ns 0 1 0 z z z z 0 z x
+# KERNEL: 200 ns 0 0 0 z z z z 0 z x
+# KERNEL: 205 ns 0 1 0 z z z z 0 z x
+# KERNEL: 210 ns 0 0 0 z z z z 0 z x
+# KERNEL: 215 ns 0 1 0 z z z z 0 z x
+# KERNEL: 220 ns 0 0 0 z z z z 0 z x
+# KERNEL: 225 ns 0 1 0 z z z z 0 z x
+# KERNEL: 230 ns 0 0 0 z z z z 0 z x
+# KERNEL: 235 ns 0 1 0 z z z z 0 z x
+# KERNEL: 240 ns 0 0 0 z z z z 0 z x
+# KERNEL: 245 ns 0 1 0 z z z z 0 z x
+# KERNEL: 250 ns 0 0 0 z z z z 0 z x
+# KERNEL: 255 ns 0 1 0 z z z z 0 z x
+# KERNEL: 260 ns 0 0 0 z z z z 0 z x
+# KERNEL: 265 ns 0 1 0 z z z z 0 z x
+# KERNEL: 270 ns 0 0 0 z z z z 0 z x
+# KERNEL: 275 ns 0 1 0 z z z z 0 z x
+# KERNEL: 280 ns 0 0 0 z z z z 0 z x
+# KERNEL: 285 ns 0 1 0 z z z z 0 z x
+# KERNEL: 290 ns 0 0 0 z z z z 0 z x
+# KERNEL: 295 ns 0 1 0 z z z z 0 z x
+# KERNEL: 300 ns 0 0 0 z z z z 0 z x
+# KERNEL: 305 ns 0 1 0 z z z z 0 z x
+# KERNEL: 310 ns 0 0 0 z z z z 0 z x
+# KERNEL: 315 ns 0 1 0 z z z z 0 z x
+# KERNEL: 320 ns 0 0 0 z z z z 0 z x
+# KERNEL: 325 ns 0 1 0 z z z z 0 z x
+# KERNEL: 330 ns 0 0 0 z z z z 0 z x
+# KERNEL: 335 ns 0 1 0 z z z z 0 z x
+# KERNEL: 340 ns 0 0 0 z z z z 0 z x
+# KERNEL: 345 ns 0 1 0 z z z z 0 z x
+# KERNEL: 350 ns 0 0 0 z z z z 0 z x
+# KERNEL: 355 ns 0 1 0 z z z z 0 z x
+# KERNEL: 360 ns 0 0 0 z z z z 0 z x
+# KERNEL: 365 ns 0 1 0 z z z z 0 z x
+# KERNEL: 370 ns 0 0 0 z z z z 0 z x
+# KERNEL: 375 ns 0 1 0 z z z z 0 z x
+# KERNEL: 380 ns 0 0 0 z z z z 0 z x
+# KERNEL: 385 ns 0 1 0 z z z z 0 z x
+# KERNEL: 390 ns 0 0 0 z z z z 0 z x
+# KERNEL: 395 ns 0 1 0 z z z z 0 z x
+# KERNEL: 400 ns 0 0 0 z z z z 0 z x
+# KERNEL: 405 ns 0 1 0 z z z z 0 z x
+# KERNEL: 410 ns 0 0 0 z z z z 0 z x
+# KERNEL: 415 ns 0 1 0 z z z z 0 z x
+# KERNEL: 420 ns 0 0 0 z z z z 0 z x
+# KERNEL: 425 ns 0 1 0 z z z z 0 z x
+# KERNEL: 430 ns 0 0 0 z z z z 0 z x
+# KERNEL: 435 ns 0 1 0 z z z z 0 z x
+# KERNEL: 440 ns 0 0 0 z z z z 0 z x
+# KERNEL: 445 ns 0 1 0 z z z z 0 z x
+# KERNEL: 450 ns 0 0 0 z z z z 0 z x
+# KERNEL: 455 ns 0 1 0 z z z z 0 z x
+# KERNEL: 460 ns 0 0 0 z z z z 0 z x
+# KERNEL: 465 ns 0 1 0 z z z z 0 z x
+# KERNEL: 470 ns 0 0 0 z z z z 0 z x
+# KERNEL: 475 ns 0 1 0 z z z z 0 z x
+# KERNEL: 480 ns 0 0 0 z z z z 0 z x
+# KERNEL: 485 ns 0 1 0 z z z z 0 z x
+# KERNEL: 490 ns 0 0 0 z z z z 0 z x
+# KERNEL: 495 ns 0 1 0 z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (47, 15): Syntax error. Unexpected token: negedge[_NEGEDGE].
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.4 [s]
+# SLP: Finished : 0.5 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 3.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4102 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.32, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 0 x z z z z 0 z x
+# KERNEL: 5 ns 1 1 1 z z z z 0 z x
+# KERNEL: 10 ns 1 0 1 z z z z 0 z x
+# KERNEL: 15 ns 0 1 1 z z z z 1 z x
+# KERNEL: 16 ns 0 1 0 z z z z 1 z x
+# KERNEL: 20 ns 0 0 0 z z z z 1 z x
+# KERNEL: 25 ns 0 1 0 z z z z 0 z x
+# KERNEL: 30 ns 0 0 0 z z z z 0 z x
+# KERNEL: 35 ns 0 1 0 z z z z 0 z x
+# KERNEL: 40 ns 0 0 0 z z z z 0 z x
+# KERNEL: 45 ns 0 1 0 z z z z 0 z x
+# KERNEL: 50 ns 0 0 0 z z z z 0 z x
+# KERNEL: 55 ns 0 1 0 z z z z 0 z x
+# KERNEL: 60 ns 0 0 0 z z z z 0 z x
+# KERNEL: 65 ns 0 1 0 z z z z 0 z x
+# KERNEL: 70 ns 0 0 0 z z z z 0 z x
+# KERNEL: 75 ns 0 1 0 z z z z 0 z x
+# KERNEL: 80 ns 0 0 0 z z z z 0 z x
+# KERNEL: 85 ns 0 1 0 z z z z 0 z x
+# KERNEL: 90 ns 0 0 0 z z z z 0 z x
+# KERNEL: 95 ns 0 1 0 z z z z 0 z x
+# KERNEL: 100 ns 0 0 0 z z z z 0 z x
+# KERNEL: 105 ns 0 1 0 z z z z 0 z x
+# KERNEL: 110 ns 0 0 0 z z z z 0 z x
+# KERNEL: 115 ns 0 1 0 z z z z 0 z x
+# KERNEL: 120 ns 0 0 0 z z z z 0 z x
+# KERNEL: 125 ns 0 1 0 z z z z 0 z x
+# KERNEL: 130 ns 0 0 0 z z z z 0 z x
+# KERNEL: 135 ns 0 1 0 z z z z 0 z x
+# KERNEL: 140 ns 0 0 0 z z z z 0 z x
+# KERNEL: 145 ns 0 1 0 z z z z 0 z x
+# KERNEL: 150 ns 0 0 0 z z z z 0 z x
+# KERNEL: 155 ns 0 1 0 z z z z 0 z x
+# KERNEL: 160 ns 0 0 0 z z z z 0 z x
+# KERNEL: 165 ns 0 1 0 z z z z 0 z x
+# KERNEL: 170 ns 0 0 0 z z z z 0 z x
+# KERNEL: 175 ns 0 1 0 z z z z 0 z x
+# KERNEL: 180 ns 0 0 0 z z z z 0 z x
+# KERNEL: 185 ns 0 1 0 z z z z 0 z x
+# KERNEL: 190 ns 0 0 0 z z z z 0 z x
+# KERNEL: 195 ns 0 1 0 z z z z 0 z x
+# KERNEL: 200 ns 0 0 0 z z z z 0 z x
+# KERNEL: 205 ns 0 1 0 z z z z 0 z x
+# KERNEL: 210 ns 0 0 0 z z z z 0 z x
+# KERNEL: 215 ns 0 1 0 z z z z 0 z x
+# KERNEL: 220 ns 0 0 0 z z z z 0 z x
+# KERNEL: 225 ns 0 1 0 z z z z 0 z x
+# KERNEL: 230 ns 0 0 0 z z z z 0 z x
+# KERNEL: 235 ns 0 1 0 z z z z 0 z x
+# KERNEL: 240 ns 0 0 0 z z z z 0 z x
+# KERNEL: 245 ns 0 1 0 z z z z 0 z x
+# KERNEL: 250 ns 0 0 0 z z z z 0 z x
+# KERNEL: 255 ns 0 1 0 z z z z 0 z x
+# KERNEL: 260 ns 0 0 0 z z z z 0 z x
+# KERNEL: 265 ns 0 1 0 z z z z 0 z x
+# KERNEL: 270 ns 0 0 0 z z z z 0 z x
+# KERNEL: 275 ns 0 1 0 z z z z 0 z x
+# KERNEL: 280 ns 0 0 0 z z z z 0 z x
+# KERNEL: 285 ns 0 1 0 z z z z 0 z x
+# KERNEL: 290 ns 0 0 0 z z z z 0 z x
+# KERNEL: 295 ns 0 1 0 z z z z 0 z x
+# KERNEL: 300 ns 0 0 0 z z z z 0 z x
+# KERNEL: 305 ns 0 1 0 z z z z 0 z x
+# KERNEL: 310 ns 0 0 0 z z z z 0 z x
+# KERNEL: 315 ns 0 1 0 z z z z 0 z x
+# KERNEL: 320 ns 0 0 0 z z z z 0 z x
+# KERNEL: 325 ns 0 1 0 z z z z 0 z x
+# KERNEL: 330 ns 0 0 0 z z z z 0 z x
+# KERNEL: 335 ns 0 1 0 z z z z 0 z x
+# KERNEL: 340 ns 0 0 0 z z z z 0 z x
+# KERNEL: 345 ns 0 1 0 z z z z 0 z x
+# KERNEL: 350 ns 0 0 0 z z z z 0 z x
+# KERNEL: 355 ns 0 1 0 z z z z 0 z x
+# KERNEL: 360 ns 0 0 0 z z z z 0 z x
+# KERNEL: 365 ns 0 1 0 z z z z 0 z x
+# KERNEL: 370 ns 0 0 0 z z z z 0 z x
+# KERNEL: 375 ns 0 1 0 z z z z 0 z x
+# KERNEL: 380 ns 0 0 0 z z z z 0 z x
+# KERNEL: 385 ns 0 1 0 z z z z 0 z x
+# KERNEL: 390 ns 0 0 0 z z z z 0 z x
+# KERNEL: 395 ns 0 1 0 z z z z 0 z x
+# KERNEL: 400 ns 0 0 0 z z z z 0 z x
+# KERNEL: 405 ns 0 1 0 z z z z 0 z x
+# KERNEL: 410 ns 0 0 0 z z z z 0 z x
+# KERNEL: 415 ns 0 1 0 z z z z 0 z x
+# KERNEL: 420 ns 0 0 0 z z z z 0 z x
+# KERNEL: 425 ns 0 1 0 z z z z 0 z x
+# KERNEL: 430 ns 0 0 0 z z z z 0 z x
+# KERNEL: 435 ns 0 1 0 z z z z 0 z x
+# KERNEL: 440 ns 0 0 0 z z z z 0 z x
+# KERNEL: 445 ns 0 1 0 z z z z 0 z x
+# KERNEL: 450 ns 0 0 0 z z z z 0 z x
+# KERNEL: 455 ns 0 1 0 z z z z 0 z x
+# KERNEL: 460 ns 0 0 0 z z z z 0 z x
+# KERNEL: 465 ns 0 1 0 z z z z 0 z x
+# KERNEL: 470 ns 0 0 0 z z z z 0 z x
+# KERNEL: 475 ns 0 1 0 z z z z 0 z x
+# KERNEL: 480 ns 0 0 0 z z z z 0 z x
+# KERNEL: 485 ns 0 1 0 z z z z 0 z x
+# KERNEL: 490 ns 0 0 0 z z z z 0 z x
+# KERNEL: 495 ns 0 1 0 z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+run
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.3 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4102 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.33, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 0 x z z z z 0 z x
+# KERNEL: 5 ns 1 1 1 z z z z 0 z x
+# KERNEL: 10 ns 1 0 1 z z z z 0 z x
+# KERNEL: 15 ns 0 1 1 z z z z 1 z x
+# KERNEL: 20 ns 0 0 0 z z z z 1 z x
+# KERNEL: 25 ns 0 1 0 z z z z 0 z x
+# KERNEL: 30 ns 0 0 0 z z z z 0 z x
+# KERNEL: 35 ns 0 1 0 z z z z 0 z x
+# KERNEL: 40 ns 0 0 0 z z z z 0 z x
+# KERNEL: 45 ns 0 1 0 z z z z 0 z x
+# KERNEL: 50 ns 0 0 0 z z z z 0 z x
+# KERNEL: 55 ns 0 1 0 z z z z 0 z x
+# KERNEL: 60 ns 0 0 0 z z z z 0 z x
+# KERNEL: 65 ns 0 1 0 z z z z 0 z x
+# KERNEL: 70 ns 0 0 0 z z z z 0 z x
+# KERNEL: 75 ns 0 1 0 z z z z 0 z x
+# KERNEL: 80 ns 0 0 0 z z z z 0 z x
+# KERNEL: 85 ns 0 1 0 z z z z 0 z x
+# KERNEL: 90 ns 0 0 0 z z z z 0 z x
+# KERNEL: 95 ns 0 1 0 z z z z 0 z x
+# KERNEL: 100 ns 0 0 0 z z z z 0 z x
+# KERNEL: 105 ns 0 1 0 z z z z 0 z x
+# KERNEL: 110 ns 0 0 0 z z z z 0 z x
+# KERNEL: 115 ns 0 1 0 z z z z 0 z x
+# KERNEL: 120 ns 0 0 0 z z z z 0 z x
+# KERNEL: 125 ns 0 1 0 z z z z 0 z x
+# KERNEL: 130 ns 0 0 0 z z z z 0 z x
+# KERNEL: 135 ns 0 1 0 z z z z 0 z x
+# KERNEL: 140 ns 0 0 0 z z z z 0 z x
+# KERNEL: 145 ns 0 1 0 z z z z 0 z x
+# KERNEL: 150 ns 0 0 0 z z z z 0 z x
+# KERNEL: 155 ns 0 1 0 z z z z 0 z x
+# KERNEL: 160 ns 0 0 0 z z z z 0 z x
+# KERNEL: 165 ns 0 1 0 z z z z 0 z x
+# KERNEL: 170 ns 0 0 0 z z z z 0 z x
+# KERNEL: 175 ns 0 1 0 z z z z 0 z x
+# KERNEL: 180 ns 0 0 0 z z z z 0 z x
+# KERNEL: 185 ns 0 1 0 z z z z 0 z x
+# KERNEL: 190 ns 0 0 0 z z z z 0 z x
+# KERNEL: 195 ns 0 1 0 z z z z 0 z x
+# KERNEL: 200 ns 0 0 0 z z z z 0 z x
+# KERNEL: 205 ns 0 1 0 z z z z 0 z x
+# KERNEL: 210 ns 0 0 0 z z z z 0 z x
+# KERNEL: 215 ns 0 1 0 z z z z 0 z x
+# KERNEL: 220 ns 0 0 0 z z z z 0 z x
+# KERNEL: 225 ns 0 1 0 z z z z 0 z x
+# KERNEL: 230 ns 0 0 0 z z z z 0 z x
+# KERNEL: 235 ns 0 1 0 z z z z 0 z x
+# KERNEL: 240 ns 0 0 0 z z z z 0 z x
+# KERNEL: 245 ns 0 1 0 z z z z 0 z x
+# KERNEL: 250 ns 0 0 0 z z z z 0 z x
+# KERNEL: 255 ns 0 1 0 z z z z 0 z x
+# KERNEL: 260 ns 0 0 0 z z z z 0 z x
+# KERNEL: 265 ns 0 1 0 z z z z 0 z x
+# KERNEL: 270 ns 0 0 0 z z z z 0 z x
+# KERNEL: 275 ns 0 1 0 z z z z 0 z x
+# KERNEL: 280 ns 0 0 0 z z z z 0 z x
+# KERNEL: 285 ns 0 1 0 z z z z 0 z x
+# KERNEL: 290 ns 0 0 0 z z z z 0 z x
+# KERNEL: 295 ns 0 1 0 z z z z 0 z x
+# KERNEL: 300 ns 0 0 0 z z z z 0 z x
+# KERNEL: 305 ns 0 1 0 z z z z 0 z x
+# KERNEL: 310 ns 0 0 0 z z z z 0 z x
+# KERNEL: 315 ns 0 1 0 z z z z 0 z x
+# KERNEL: 320 ns 0 0 0 z z z z 0 z x
+# KERNEL: 325 ns 0 1 0 z z z z 0 z x
+# KERNEL: 330 ns 0 0 0 z z z z 0 z x
+# KERNEL: 335 ns 0 1 0 z z z z 0 z x
+# KERNEL: 340 ns 0 0 0 z z z z 0 z x
+# KERNEL: 345 ns 0 1 0 z z z z 0 z x
+# KERNEL: 350 ns 0 0 0 z z z z 0 z x
+# KERNEL: 355 ns 0 1 0 z z z z 0 z x
+# KERNEL: 360 ns 0 0 0 z z z z 0 z x
+# KERNEL: 365 ns 0 1 0 z z z z 0 z x
+# KERNEL: 370 ns 0 0 0 z z z z 0 z x
+# KERNEL: 375 ns 0 1 0 z z z z 0 z x
+# KERNEL: 380 ns 0 0 0 z z z z 0 z x
+# KERNEL: 385 ns 0 1 0 z z z z 0 z x
+# KERNEL: 390 ns 0 0 0 z z z z 0 z x
+# KERNEL: 395 ns 0 1 0 z z z z 0 z x
+# KERNEL: 400 ns 0 0 0 z z z z 0 z x
+# KERNEL: 405 ns 0 1 0 z z z z 0 z x
+# KERNEL: 410 ns 0 0 0 z z z z 0 z x
+# KERNEL: 415 ns 0 1 0 z z z z 0 z x
+# KERNEL: 420 ns 0 0 0 z z z z 0 z x
+# KERNEL: 425 ns 0 1 0 z z z z 0 z x
+# KERNEL: 430 ns 0 0 0 z z z z 0 z x
+# KERNEL: 435 ns 0 1 0 z z z z 0 z x
+# KERNEL: 440 ns 0 0 0 z z z z 0 z x
+# KERNEL: 445 ns 0 1 0 z z z z 0 z x
+# KERNEL: 450 ns 0 0 0 z z z z 0 z x
+# KERNEL: 455 ns 0 1 0 z z z z 0 z x
+# KERNEL: 460 ns 0 0 0 z z z z 0 z x
+# KERNEL: 465 ns 0 1 0 z z z z 0 z x
+# KERNEL: 470 ns 0 0 0 z z z z 0 z x
+# KERNEL: 475 ns 0 1 0 z z z z 0 z x
+# KERNEL: 480 ns 0 0 0 z z z z 0 z x
+# KERNEL: 485 ns 0 1 0 z z z z 0 z x
+# KERNEL: 490 ns 0 0 0 z z z z 0 z x
+# KERNEL: 495 ns 0 1 0 z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 FSM_ex_control.v : (48, 22): Undeclared identifier: clk.
+# Error: VCP2678 FSM_ex_control.v : (43, 24): There must be one and only one event control in always_ff.
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2678 FSM_ex_control.v : (43, 24): There must be one and only one event control in always_ff.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (45, 10): Syntax error. Unexpected token: @.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Error: VCP2000 FSM_ex_control.v : (49, 10): Syntax error. Unexpected token: @.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 2.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4102 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.40, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 0 x z z z z 0 z x
+# KERNEL: 5 ns 1 1 1 z z z z 0 z x
+# KERNEL: 10 ns 1 0 1 z z z z 0 z x
+# KERNEL: 15 ns 0 1 0 z z z z 1 z x
+# KERNEL: 20 ns 0 0 0 z z z z 1 z x
+# KERNEL: 25 ns 0 1 0 z z z z 0 z x
+# KERNEL: 30 ns 0 0 0 z z z z 0 z x
+# KERNEL: 35 ns 0 1 0 z z z z 0 z x
+# KERNEL: 40 ns 0 0 0 z z z z 0 z x
+# KERNEL: 45 ns 0 1 0 z z z z 0 z x
+# KERNEL: 50 ns 0 0 0 z z z z 0 z x
+# KERNEL: 55 ns 0 1 0 z z z z 0 z x
+# KERNEL: 60 ns 0 0 0 z z z z 0 z x
+# KERNEL: 65 ns 0 1 0 z z z z 0 z x
+# KERNEL: 70 ns 0 0 0 z z z z 0 z x
+# KERNEL: 75 ns 0 1 0 z z z z 0 z x
+# KERNEL: 80 ns 0 0 0 z z z z 0 z x
+# KERNEL: 85 ns 0 1 0 z z z z 0 z x
+# KERNEL: 90 ns 0 0 0 z z z z 0 z x
+# KERNEL: 95 ns 0 1 0 z z z z 0 z x
+# KERNEL: 100 ns 0 0 0 z z z z 0 z x
+# KERNEL: 105 ns 0 1 0 z z z z 0 z x
+# KERNEL: 110 ns 0 0 0 z z z z 0 z x
+# KERNEL: 115 ns 0 1 0 z z z z 0 z x
+# KERNEL: 120 ns 0 0 0 z z z z 0 z x
+# KERNEL: 125 ns 0 1 0 z z z z 0 z x
+# KERNEL: 130 ns 0 0 0 z z z z 0 z x
+# KERNEL: 135 ns 0 1 0 z z z z 0 z x
+# KERNEL: 140 ns 0 0 0 z z z z 0 z x
+# KERNEL: 145 ns 0 1 0 z z z z 0 z x
+# KERNEL: 150 ns 0 0 0 z z z z 0 z x
+# KERNEL: 155 ns 0 1 0 z z z z 0 z x
+# KERNEL: 160 ns 0 0 0 z z z z 0 z x
+# KERNEL: 165 ns 0 1 0 z z z z 0 z x
+# KERNEL: 170 ns 0 0 0 z z z z 0 z x
+# KERNEL: 175 ns 0 1 0 z z z z 0 z x
+# KERNEL: 180 ns 0 0 0 z z z z 0 z x
+# KERNEL: 185 ns 0 1 0 z z z z 0 z x
+# KERNEL: 190 ns 0 0 0 z z z z 0 z x
+# KERNEL: 195 ns 0 1 0 z z z z 0 z x
+# KERNEL: 200 ns 0 0 0 z z z z 0 z x
+# KERNEL: 205 ns 0 1 0 z z z z 0 z x
+# KERNEL: 210 ns 0 0 0 z z z z 0 z x
+# KERNEL: 215 ns 0 1 0 z z z z 0 z x
+# KERNEL: 220 ns 0 0 0 z z z z 0 z x
+# KERNEL: 225 ns 0 1 0 z z z z 0 z x
+# KERNEL: 230 ns 0 0 0 z z z z 0 z x
+# KERNEL: 235 ns 0 1 0 z z z z 0 z x
+# KERNEL: 240 ns 0 0 0 z z z z 0 z x
+# KERNEL: 245 ns 0 1 0 z z z z 0 z x
+# KERNEL: 250 ns 0 0 0 z z z z 0 z x
+# KERNEL: 255 ns 0 1 0 z z z z 0 z x
+# KERNEL: 260 ns 0 0 0 z z z z 0 z x
+# KERNEL: 265 ns 0 1 0 z z z z 0 z x
+# KERNEL: 270 ns 0 0 0 z z z z 0 z x
+# KERNEL: 275 ns 0 1 0 z z z z 0 z x
+# KERNEL: 280 ns 0 0 0 z z z z 0 z x
+# KERNEL: 285 ns 0 1 0 z z z z 0 z x
+# KERNEL: 290 ns 0 0 0 z z z z 0 z x
+# KERNEL: 295 ns 0 1 0 z z z z 0 z x
+# KERNEL: 300 ns 0 0 0 z z z z 0 z x
+# KERNEL: 305 ns 0 1 0 z z z z 0 z x
+# KERNEL: 310 ns 0 0 0 z z z z 0 z x
+# KERNEL: 315 ns 0 1 0 z z z z 0 z x
+# KERNEL: 320 ns 0 0 0 z z z z 0 z x
+# KERNEL: 325 ns 0 1 0 z z z z 0 z x
+# KERNEL: 330 ns 0 0 0 z z z z 0 z x
+# KERNEL: 335 ns 0 1 0 z z z z 0 z x
+# KERNEL: 340 ns 0 0 0 z z z z 0 z x
+# KERNEL: 345 ns 0 1 0 z z z z 0 z x
+# KERNEL: 350 ns 0 0 0 z z z z 0 z x
+# KERNEL: 355 ns 0 1 0 z z z z 0 z x
+# KERNEL: 360 ns 0 0 0 z z z z 0 z x
+# KERNEL: 365 ns 0 1 0 z z z z 0 z x
+# KERNEL: 370 ns 0 0 0 z z z z 0 z x
+# KERNEL: 375 ns 0 1 0 z z z z 0 z x
+# KERNEL: 380 ns 0 0 0 z z z z 0 z x
+# KERNEL: 385 ns 0 1 0 z z z z 0 z x
+# KERNEL: 390 ns 0 0 0 z z z z 0 z x
+# KERNEL: 395 ns 0 1 0 z z z z 0 z x
+# KERNEL: 400 ns 0 0 0 z z z z 0 z x
+# KERNEL: 405 ns 0 1 0 z z z z 0 z x
+# KERNEL: 410 ns 0 0 0 z z z z 0 z x
+# KERNEL: 415 ns 0 1 0 z z z z 0 z x
+# KERNEL: 420 ns 0 0 0 z z z z 0 z x
+# KERNEL: 425 ns 0 1 0 z z z z 0 z x
+# KERNEL: 430 ns 0 0 0 z z z z 0 z x
+# KERNEL: 435 ns 0 1 0 z z z z 0 z x
+# KERNEL: 440 ns 0 0 0 z z z z 0 z x
+# KERNEL: 445 ns 0 1 0 z z z z 0 z x
+# KERNEL: 450 ns 0 0 0 z z z z 0 z x
+# KERNEL: 455 ns 0 1 0 z z z z 0 z x
+# KERNEL: 460 ns 0 0 0 z z z z 0 z x
+# KERNEL: 465 ns 0 1 0 z z z z 0 z x
+# KERNEL: 470 ns 0 0 0 z z z z 0 z x
+# KERNEL: 475 ns 0 1 0 z z z z 0 z x
+# KERNEL: 480 ns 0 0 0 z z z z 0 z x
+# KERNEL: 485 ns 0 1 0 z z z z 0 z x
+# KERNEL: 490 ns 0 0 0 z z z z 0 z x
+# KERNEL: 495 ns 0 1 0 z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP5103 FSM_ex_control.v : (48, 22): Undeclared identifier: clk.
+# Warning: VCP3005 FSM_ex_control.v : (48, 22): The implicit event expression list (@*) is empty; the process will never be executed.
+# Compile failure 1 Errors 1 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Running Optimizer.
+# ELB/DAG code generating.
+# Info: VCP2113 Module \$root found in current working library.
+# $root top modules: Timer_counter CTRL_ex_time_TB FSM_ex_control_TB.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# Warning: ALOG: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 20 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# KERNEL: SLP loading done - time: 0.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5516 kB (elbread=1280 elab2=4103 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\My_Designs\ICprosjekt\camera\src\wave.asdb
+#  19.40, onsdag 7. november 2018
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'c:/My_Designs/ICprosjekt/camera/src/wave.asdb'.
+run
+# KERNEL: 0 ns 1 0 x z z z z 0 z x
+# KERNEL: 5 ns 1 1 1 z z z z 0 z x
+# KERNEL: 10 ns 1 0 1 z z z z 0 z x
+# KERNEL: 15 ns 0 1 1 z z z z 1 z x
+# KERNEL: 20 ns 0 0 1 z z z z 1 z x
+# KERNEL: 25 ns 0 1 0 z z z z 0 z x
+# KERNEL: 30 ns 0 0 0 z z z z 0 z x
+# KERNEL: 35 ns 0 1 0 z z z z 0 z x
+# KERNEL: 40 ns 0 0 0 z z z z 0 z x
+# KERNEL: 45 ns 0 1 0 z z z z 0 z x
+# KERNEL: 50 ns 0 0 0 z z z z 0 z x
+# KERNEL: 55 ns 0 1 0 z z z z 0 z x
+# KERNEL: 60 ns 0 0 0 z z z z 0 z x
+# KERNEL: 65 ns 0 1 0 z z z z 0 z x
+# KERNEL: 70 ns 0 0 0 z z z z 0 z x
+# KERNEL: 75 ns 0 1 0 z z z z 0 z x
+# KERNEL: 80 ns 0 0 0 z z z z 0 z x
+# KERNEL: 85 ns 0 1 0 z z z z 0 z x
+# KERNEL: 90 ns 0 0 0 z z z z 0 z x
+# KERNEL: 95 ns 0 1 0 z z z z 0 z x
+# KERNEL: 100 ns 0 0 0 z z z z 0 z x
+# KERNEL: 105 ns 0 1 0 z z z z 0 z x
+# KERNEL: 110 ns 0 0 0 z z z z 0 z x
+# KERNEL: 115 ns 0 1 0 z z z z 0 z x
+# KERNEL: 120 ns 0 0 0 z z z z 0 z x
+# KERNEL: 125 ns 0 1 0 z z z z 0 z x
+# KERNEL: 130 ns 0 0 0 z z z z 0 z x
+# KERNEL: 135 ns 0 1 0 z z z z 0 z x
+# KERNEL: 140 ns 0 0 0 z z z z 0 z x
+# KERNEL: 145 ns 0 1 0 z z z z 0 z x
+# KERNEL: 150 ns 0 0 0 z z z z 0 z x
+# KERNEL: 155 ns 0 1 0 z z z z 0 z x
+# KERNEL: 160 ns 0 0 0 z z z z 0 z x
+# KERNEL: 165 ns 0 1 0 z z z z 0 z x
+# KERNEL: 170 ns 0 0 0 z z z z 0 z x
+# KERNEL: 175 ns 0 1 0 z z z z 0 z x
+# KERNEL: 180 ns 0 0 0 z z z z 0 z x
+# KERNEL: 185 ns 0 1 0 z z z z 0 z x
+# KERNEL: 190 ns 0 0 0 z z z z 0 z x
+# KERNEL: 195 ns 0 1 0 z z z z 0 z x
+# KERNEL: 200 ns 0 0 0 z z z z 0 z x
+# KERNEL: 205 ns 0 1 0 z z z z 0 z x
+# KERNEL: 210 ns 0 0 0 z z z z 0 z x
+# KERNEL: 215 ns 0 1 0 z z z z 0 z x
+# KERNEL: 220 ns 0 0 0 z z z z 0 z x
+# KERNEL: 225 ns 0 1 0 z z z z 0 z x
+# KERNEL: 230 ns 0 0 0 z z z z 0 z x
+# KERNEL: 235 ns 0 1 0 z z z z 0 z x
+# KERNEL: 240 ns 0 0 0 z z z z 0 z x
+# KERNEL: 245 ns 0 1 0 z z z z 0 z x
+# KERNEL: 250 ns 0 0 0 z z z z 0 z x
+# KERNEL: 255 ns 0 1 0 z z z z 0 z x
+# KERNEL: 260 ns 0 0 0 z z z z 0 z x
+# KERNEL: 265 ns 0 1 0 z z z z 0 z x
+# KERNEL: 270 ns 0 0 0 z z z z 0 z x
+# KERNEL: 275 ns 0 1 0 z z z z 0 z x
+# KERNEL: 280 ns 0 0 0 z z z z 0 z x
+# KERNEL: 285 ns 0 1 0 z z z z 0 z x
+# KERNEL: 290 ns 0 0 0 z z z z 0 z x
+# KERNEL: 295 ns 0 1 0 z z z z 0 z x
+# KERNEL: 300 ns 0 0 0 z z z z 0 z x
+# KERNEL: 305 ns 0 1 0 z z z z 0 z x
+# KERNEL: 310 ns 0 0 0 z z z z 0 z x
+# KERNEL: 315 ns 0 1 0 z z z z 0 z x
+# KERNEL: 320 ns 0 0 0 z z z z 0 z x
+# KERNEL: 325 ns 0 1 0 z z z z 0 z x
+# KERNEL: 330 ns 0 0 0 z z z z 0 z x
+# KERNEL: 335 ns 0 1 0 z z z z 0 z x
+# KERNEL: 340 ns 0 0 0 z z z z 0 z x
+# KERNEL: 345 ns 0 1 0 z z z z 0 z x
+# KERNEL: 350 ns 0 0 0 z z z z 0 z x
+# KERNEL: 355 ns 0 1 0 z z z z 0 z x
+# KERNEL: 360 ns 0 0 0 z z z z 0 z x
+# KERNEL: 365 ns 0 1 0 z z z z 0 z x
+# KERNEL: 370 ns 0 0 0 z z z z 0 z x
+# KERNEL: 375 ns 0 1 0 z z z z 0 z x
+# KERNEL: 380 ns 0 0 0 z z z z 0 z x
+# KERNEL: 385 ns 0 1 0 z z z z 0 z x
+# KERNEL: 390 ns 0 0 0 z z z z 0 z x
+# KERNEL: 395 ns 0 1 0 z z z z 0 z x
+# KERNEL: 400 ns 0 0 0 z z z z 0 z x
+# KERNEL: 405 ns 0 1 0 z z z z 0 z x
+# KERNEL: 410 ns 0 0 0 z z z z 0 z x
+# KERNEL: 415 ns 0 1 0 z z z z 0 z x
+# KERNEL: 420 ns 0 0 0 z z z z 0 z x
+# KERNEL: 425 ns 0 1 0 z z z z 0 z x
+# KERNEL: 430 ns 0 0 0 z z z z 0 z x
+# KERNEL: 435 ns 0 1 0 z z z z 0 z x
+# KERNEL: 440 ns 0 0 0 z z z z 0 z x
+# KERNEL: 445 ns 0 1 0 z z z z 0 z x
+# KERNEL: 450 ns 0 0 0 z z z z 0 z x
+# KERNEL: 455 ns 0 1 0 z z z z 0 z x
+# KERNEL: 460 ns 0 0 0 z z z z 0 z x
+# KERNEL: 465 ns 0 1 0 z z z z 0 z x
+# KERNEL: 470 ns 0 0 0 z z z z 0 z x
+# KERNEL: 475 ns 0 1 0 z z z z 0 z x
+# KERNEL: 480 ns 0 0 0 z z z z 0 z x
+# KERNEL: 485 ns 0 1 0 z z z z 0 z x
+# KERNEL: 490 ns 0 0 0 z z z z 0 z x
+# KERNEL: 495 ns 0 1 0 z z z z 0 z x
+# RUNTIME: Info: RUNTIME_0068 FSM_ex_control_TB.v (30): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /FSM_ex_control_TB,  Process: @INITIAL#29_4@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2858 FSM_ex_control.v : (49, 33): Start is not a valid left-hand side of a procedural assignment.
+# Error: VCP2000 FSM_ex_control.v : (50, 9): Syntax error. Unexpected token: always[_ALWAYS].
+# Error: VCP2000 FSM_ex_control.v : (52, 15): Syntax error. Unexpected token: <[O_LESS].
+# Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -sv2k12 -work camera $dsn/src/FSM_ex_control.v
+# Pass 1. Scanning modules hierarchy.
+# Info: VCP2113 Module \$root found in current working library.
+# Pass 2. Processing instantiations.
+# Pass 3. Processing behavioral statements.
+# Error: VCP2858 FSM_ex_control.v : (49, 33): Start is not a valid left-hand side of a procedural assignment.
+# Error: VCP2000 FSM_ex_control.v : (50, 9): Syntax error. Unexpected token: always[_ALWAYS].
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].

@@ -1,0 +1,24 @@
+Active-HDL 10.5.217.6767 2018-11-07 19:40:52
+
+Elaboration top modules:
+Verilog Module                FSM_ex_control_TB
+
+
+-----------------------------------------------------------------------------------------
+Verilog Module          | Library | Info | Compiler Version        | Compilation Options
+-----------------------------------------------------------------------------------------
+FSM_ex_control_TB       | camera  |      | 10.5.217.6767 (Windows) | -O2 -sv2k12
+FSM_ex_control          | camera  |      | 10.5.217.6767 (Windows) | -O2 -sv2k12
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+Library                 | Comment
+-----------------------------------------------------------------------------------------
+camera                  | None
+-----------------------------------------------------------------------------------------
+
+
+Simulation Options: asim -O5 +access +r +m+FSM_ex_control_TB FSM_ex_control_TB
+
+
+The performance of simulation is reduced. Version Student Edition
