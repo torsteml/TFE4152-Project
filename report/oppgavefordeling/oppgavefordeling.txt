@@ -1,0 +1,32 @@
+Analog del:
+-Description of the problem
+-Description of your solution
+-Theory
+-Every choice you make must be based on theory
+-Calculations of transistor sizes etc must be included
+-Spice simulations
+-Screen shots of relevant simulations
+-Net lists
+
+Digital del:
+-Description of the problem
+-Description of your solution
+-Verilog code
+-State diagrams
+-Timing charts
+-Screen shots of relevant simulations
+
+
+T-Torstein
+M-Markus
+S-Sammen
+
+1) Title page: T
+2) Abstract: T
+3) Contents: T
+4) Introduction: T 
+5) Theoretical background: T(Analog) M(Digital)
+6) Design: T(Digital) M(Analog)
+7) Simulations: M
+8) Results and discussions: S
+9) Conclusions: S
