@@ -1,1 +1,0 @@
--o c:/My_Designs/ICprosjekt/camera/compile -lc c:/My_Designs/ICprosjekt/library.cfg -fl c:/My_Designs/ICprosjekt/camera/projlib.cfg -pli "C:/Aldec/Active-HDL-Student-Edition/bin/systf.dll" -epr c:/My_Designs/ICprosjekt/camera/compile/camera.epr -O2 -sve -msg 5 -sv2k12 -work camera c:/My_Designs/ICprosjekt/camera/src/FSM_ex_control.v 

@@ -1,0 +1,10 @@
+.\src\CTRL_ex_time.v
+.\src\Timer_counter.v
+.\src\FSM_ex_control.v
+.\src\CTRL_ex_time_TB.v
+.\src\FSM_ex_control_TB.v
+.\src\Timer_counter_TB.v
+.\src\RE_control.v
+.\src\RE_control_TB.v
+.\src\CounterStuff.v
+.\src\counterStuff_TB.v
