@@ -1,0 +1,8 @@
+i<>.\src\CTRL_ex_time.v
+i<>.\src\FSM_ex_control.v
+i<>.\src\Testbench.v
+i<>.\src\FSM_ex_control_TB.v
+i<>.\src\Timer_counter_TB.v
+i<>.\src\RE_control.v
+i<>.\src\RE_control_TB.v
+i<>.\src\counterStuff_TB.v
