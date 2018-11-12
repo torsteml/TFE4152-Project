@@ -1,4 +1,4 @@
-Active-HDL 10.5.217.6767 2018-11-10 13:37:00
+Active-HDL 10.5.217.6767 2018-11-12 14:24:57
 
 Elaboration top modules:
 Verilog Module                RE_control_TB
@@ -19,3 +19,9 @@ Library                 | Comment
 -----------------------------------------------------------------------------------------
 camera                  | None
 -----------------------------------------------------------------------------------------
+
+
+Simulation Options: asim -O5 +access +r +m+RE_control_TB RE_control_TB
+
+
+The performance of simulation is reduced. Version Student Edition

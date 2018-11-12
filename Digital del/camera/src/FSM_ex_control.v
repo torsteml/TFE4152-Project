@@ -15,8 +15,7 @@ input wire Init ;
 input wire Ovf5 ;
 
 reg[3:0] counter;
-initial
-	counter = 0;
+	
 
 typedef enum logic[2:0]{S0,S1,S2}statetype;
 statetype state, nextState;
@@ -29,7 +28,7 @@ always @(posedge Clk) begin
 	
 	case(state)
 		S0: begin
-			Expose = 0; NRE_1 = 1; NRE_2 = 1; ADC = 0; Start = 0; Erase = 1;
+			Expose = 0; NRE_1 = 1; NRE_2 = 1; ADC = 0; Start = 0; Erase = 1; counter = 0;
 			if(Init)
 				nextState = S1;
 			else

@@ -42,18 +42,6 @@ Active_lib=
 [IMPLEMENTATION]
 UCF=
 
-[Files]
-/CTRL_ex_time.v=-1
-/Timer_counter.v=-1
-/FSM_ex_control.v=-1
-/CTRL_ex_time_TB.v=-1
-/FSM_ex_control_TB.v=-1
-/Timer_counter_TB.v=-1
-/RE_control.v=-1
-/RE_control_TB.v=-1
-/CounterStuff.v=-1
-/counterStuff_TB.v=-1
-
 [Files.Data]
 .\src\CTRL_ex_time.v=Verilog Source Code
 .\src\Timer_counter.v=Verilog Source Code
@@ -68,7 +56,21 @@ UCF=
 
 [SpecTracer]
 WindowVisible=0
+
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
+
+[Files]
+/CTRL_ex_time.v=-1
+/CTRL_ex_time_TB.v=-1
+/Timer_counter.v=-1
+/Timer_counter_TB.v=-1
+/FSM_ex_control.v=-1
+/FSM_ex_control_TB.v=-1
+/RE_control.v=-1
+/RE_control_TB.v=-1
+/CounterStuff.v=-1
+/counterStuff_TB.v=-1
+

@@ -1,8 +1,8 @@
-timestamp=1541853324827
+timestamp=1541855408680
 
 [~A]
 LastVerilogToplevel=counterStuff_TB
-ModifyID=125
+ModifyID=126
 Version=74
 c:/My_Designs/ICprosjekt/camera/src/CTRL_ex_time.v=0*239768*240322
 c:/My_Designs/ICprosjekt/camera/src/CTRL_ex_time_TB.v=0*98461*99146
@@ -22,12 +22,13 @@ c:/My_Designs/ICprosjekt/camera/src/Timer_counter.v_FSM_ex_control.v_CTRL_ex_tim
 c:/My_Designs/ICprosjekt/camera/src/Timer_counter.v_FSM_ex_control.v_CTRL_ex_time_TB.v_FSM_ex_control_TB.v_Timer_counter_TB.v_RE_control.v_RE_control_TB.v_CounterStuff.v_counterStuff_TB.v=0*236301*238481
 c:/My_Designs/ICprosjekt/camera/src/Timer_counter_TB.v=0*165568*166126
 c:/My_Designs/ICprosjekt/camera/src/counterStuff_TB.v=0*218775*219364
+c:/Users/marku/OneDrive – NTNU/Integrerte kretser/TFE4152-Project/Digital del/camera/src/FSM_ex_control.v=0*241442*242419
 
 [$root]
-A/$root=22|||1*373835
-BinI32/$root=3*263490
-SLP=3*263594
-Version=10.5.217.6767 (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|c73a565f2ade592f8ac1c68f484c9216adeb718f0682b86a68156bd6a242c2cc
+A/$root=22|||1*375442
+BinI32/$root=3*264626
+SLP=3*264730
+Version=10.5.217.6767 (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|c73a565f2ade592f8ac1c68f484c9216a4f36aa5f790f03b9096dc6c2c0f3c92
 
 [CTRL_ex_time]
 A/CTRL_ex_time=22|./../src/CTRL_ex_time.v|4|1*374257
@@ -44,11 +45,11 @@ SLP=3*257311
 Version=10.5.217.6767 (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|622df5ce6e8bbd2494d9b30ec8c0ad4a3c9d9480d22baae12c37c11e20fef2c428ff70f4a01707507c78bf16d1f1d572
 
 [FSM_ex_control]
-A/FSM_ex_control=22|./../src/FSM_ex_control.v|3|1*360944
-BinI32/FSM_ex_control=3*254184
+A/FSM_ex_control=22|./../src/FSM_ex_control.v|3|1*375864
+BinI32/FSM_ex_control=3*264798
 R=./../src/FSM_ex_control.v|3
-SLP=3*255507
-Version=10.5.217.6767 (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|6eea25c209747ab0df3c54983bfd0d75f171980b030435a74b69e1dfef09fb6938f325a89b184f4c0779265a22e2a34e
+SLP=3*266089
+Version=10.5.217.6767 (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|6eea25c209747ab0df3c54983bfd0d75f171980b030435a74b69e1dfef09fb695008013118727182b14b10d90baf0bbb
 
 [FSM_ex_control_TB]
 A/FSM_ex_control_TB=22|./../src/FSM_ex_control_TB.v|3|1*364234
@@ -100,15 +101,15 @@ SLP=3*262964
 Version=10.5.217.6767 (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|d4018bdb9f04bedbbba599344e661d535d91b9078c798adeecd7b118c0e684c0932c59cb747d8cbe3a69517243ac7c08
 
 [~MFT]
-0=6|0camera.mgf|240322|134614
-1=4|1camera.mgf|374257|359387
-3=8|3camera.mgf|264239|252730
+0=4|0camera.mgf|242419|134614
+1=4|1camera.mgf|375864|361736
+3=8|3camera.mgf|266089|255197
 
 [~U]
-$root=12|0*239245|
+$root=12|0*240853|
 CTRL_ex_time=12|0*239523|
 CTRL_ex_time_TB=12|0*234741||0x10
-FSM_ex_control=12|0*234414|
+FSM_ex_control=12|0*241115|
 FSM_ex_control_TB=12|0*234920||0x10
 RE_control=12|0*235281|
 RE_control_TB=12|0*235596||0x10
@@ -116,5 +117,3 @@ Timer_counter=12|0*234130|
 Timer_counter_TB=12|0*235101||0x10
 counterStuff=12|0*235812|
 counterStuff_TB=12|0*236094||0x10
-
-

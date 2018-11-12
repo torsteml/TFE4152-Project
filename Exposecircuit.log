@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Oct 26 10:31:55 2018
+	Date: Sat Nov 10 14:28:19 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Exposecircuit.cir
 	Analysis: Transient
 
@@ -184,7 +184,7 @@
    169:  
    170:  .param Ipd_1 = 750p ! Photodiode current, range [50 pA, 750 pA]
    171:  .param VDD = 1.8 ! Supply voltage
-   172:  .param EXPOSURETIME = 30m ! Exposure time, range [2 ms, 30 ms]
+   172:  .param EXPOSURETIME = 2m ! Exposure time, range [2 ms, 30 ms]
    173:  
    174:  .param TRF = {EXPOSURETIME/100} ! Risetime and falltime of EXPOSURE and ERASE signals
    175:  .param PW = {EXPOSURETIME} ! Pulsewidth of EXPOSURE and ERASE signals
@@ -207,7 +207,7 @@
    192:  
    193:  .subckt Exposecircuit Vdd Vss Expose Erase N2
    194:  XPD1 Vdd N1 PhotoDiode
-   195:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=2u
+   195:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=10u
    196:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
    197:  CS N2 Vss 3p
    198:  .ends
@@ -241,14 +241,14 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 451
-	Number of iterations for transient analysis....: 429
-	Total number of timepoints.....................: 150
-	Number of timepoints accepted..................: 134
-	Number of timepoints rejected..................: 16
-	Total analysis time (sec)......................: 0.043
-	Transient analysis time (sec)..................: 0.041
-	Time spent in device loading (sec).............: 0.009
+	Total number of iterations.....................: 1124
+	Number of iterations for transient analysis....: 1102
+	Total number of timepoints.....................: 393
+	Number of timepoints accepted..................: 341
+	Number of timepoints rejected..................: 52
+	Total analysis time (sec)......................: 0.03
+	Transient analysis time (sec)..................: 0.029
+	Time spent in device loading (sec).............: 0.003
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
@@ -264,4 +264,6 @@ Warning: parameter xl not supported; value ignored
 Warning: parameter xw not supported; value ignored
 Warning: Pd = 0 is less than W for m:1:n2 in model nmos.
 Warning: Ps = 0 is less than W for m:1:n2 in model nmos.
+Warning: Pd = 0 is less than W for m:1:n1 in model nmos.
+Warning: Ps = 0 is less than W for m:1:n1 in model nmos.
 

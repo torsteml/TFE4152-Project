@@ -1,3 +1,50 @@
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
-# Design Explorer: Shortcut to "C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Digital del\ICprosjekt.aws" design added.
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+RE_control_TB RE_control_TB
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.5 [s]
+# SLP: Finished : 0.5 [s]
+# SLP: 0 primitives and 7 (100.00%) other processes in SLP
+# SLP: 49 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.6 [s].
+# KERNEL: SLP loading done - time: 2.4 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5521 kB (elbread=1280 elab2=4107 kernel=133 sdf=0)
+# KERNEL: ASDB file was created in location c:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Digital del\camera\src\wave.asdb
+#  14.25, mandag 12. november 2018
+#  Simulation has been initialized
+# add wave -noreg {/RE_control_TB/Init}
+# add wave -noreg {/RE_control_TB/Exp_increase}
+# add wave -noreg {/RE_control_TB/Exp_decrease}
+# add wave -noreg {/RE_control_TB/Clk}
+# add wave -noreg {/RE_control_TB/Reset}
+# add wave -noreg {/RE_control_TB/NRE_1}
+# add wave -noreg {/RE_control_TB/NRE_2}
+# add wave -noreg {/RE_control_TB/ADC}
+# add wave -noreg {/RE_control_TB/Expose}
+# add wave -noreg {/RE_control_TB/Erase}
+# 10 signal(s) traced.
+run
+# RUNTIME: Info: RUNTIME_0068 RE_control_TB.v (22): $finish called.
+# KERNEL: Time: 500 ns,  Iteration: 0,  Instance: /RE_control_TB,  Process: @INITIAL#21_2@.
+# KERNEL: stopped at time: 500 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
