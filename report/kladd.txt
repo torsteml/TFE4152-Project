@@ -1,0 +1,56 @@
+Teori:
+
+Den analoge kretsen skal bygges opp av MOSFET transistorer med 180nm teknologi, og disse kan blant annet brukes som brytere, aktive laster og forsterkere for å bygge opp kretsen på ønsket måte. Kretssymbolet med tilhørende markinger av bulk(b), drain(d), source(s) og gate(g) til en generell NMOS og PMOS er vist i figur \ref{fig:mosfetAlone} for å forenkle en senere forklaring.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/NMOSandPMOS.png}
+    \caption{Kretssymbol for NMOS og PMOS med markert drain, gate, source og bulk.}
+    \label{fig:mosfetAlone}
+\end{figure}
+\newline
+Ved en kort forklaring av MOSFETens virkemåte i de forskjellige bruksområdene ønsker jeg å lette forklaringen av et senere design, samt motivere leseren til dypere forståelse.
+\newline
+Når en MOSFET fungerer som en bryter kan den altså skru drain-source strømmen($i_{ds}$) $"$på$"$ eller $"$av$"$ avhengig av om spenningen på gaten er høy eller lav. For en NMOS vil en en høy gatespenning skru bryteren $"$på$"$, og en lav gatespenning vil skru den $"$av$"$, og motsatt for PMOS. For at en MOSFET skal kunne operere som en bryter ønsker vi at den bytter mellom metning, der $i_{ds}$ er konstant ulik 0, og cut-off, der $i_{ds}$ er tilnærmet lik 0, når gatespenningen bytter verdi. Ved å sørge for at gatespenningen til NMOS-transistoren ligger over $V_{tn}$ kan vi altså flytte transistoren fra cut-off til metning, og dermed kortslutte source og drain, og $"$lukker$"$ bryteren. Lar vi gatespenningen falle under $V_{tn}$ flyttes transistoren over i cut-off, og vi $"$åpner$"$ bryteren.\\
+\newline
+Når en MOSFET fungerer som en aktiv last 
+
+Design:
+
+Den analog delen av systemet har som oppgave å detektere hvor mye lys som treffer fototransistoren på en gitt eksponseringstid. På den måten kan man danne et grunnlaget for at digital logikk senere skal kunne bestemme en farge på pikselen ved å måle mengden lys på pikselen svært nøyaktig. Den analoge kretsen som vist i figur \ref{fig:analogWhole}, viser hvordan en piksel er bygd opp av MOSFET transistorer, og de tilhørende kravspesifikasjonene som vist i tabell \ref{table:specsAnalog} setter rammene for hvordan designet skal prestere. Pikselen i figur \ref{fig:analogWhole} settes sammen i en 2x2-matrise slik at vi ender opp med 4 individuelle piksler som kan settes sammen til et særs primitivt bilde.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/analogPartSchematic.png}
+    \caption{Analog krets for 1 piksel.}
+    \label{fig:analogWhole}
+\end{figure}
+
+\begin{table}[h]
+\centering
+    \caption{Tilhørende kravspesifikasjoner for pikselkretsen i figur \ref{fig:analogWhole}.}
+    \begin{tabular}{|c|c|}
+        \hline
+        Spesifikasjon & Verdi\\
+        \hline
+        \hline
+        Maksimal transistorbredde, $W_{maks}$ & 10 $\mu$m\\
+        Minimal transistorbredde, $W_{min}$ & 2 $\mu$m\\
+        Maksimal transistorlengde, $L_{maks}$ & 2 $\mu$m\\
+        Minimal transistorlengde, $L_{min}$ & 0.7 $\mu$m\\
+        Maksimal kondensatorstørrelse & 3pF\\
+        Maksimal eksponeringstid & 30ms\\
+        Minimal eksponeringstid & 2ms\\
+        Maksimal strøm fra PD1 & 750pA\\
+        Minimal strøm fra PD1 & 50pA\\
+        \hline
+    \end{tabular}
+    \label{table:specsAnalog}
+\end{table}\\
+\newline
+Ved lysinnstråling på fotodioden(PD1) øker den sin strømførende evne, og den genereres en strøm til node N1. Når «Expose» settes høy vil denne strømmen fortsette til node N2 gjennom transistorbryteren M1, før den lader opp $C_{s}$ til en passende(TODO:Hva er passende?) verdi. Når eksponeringen av bildet er ferdig, og «Expose» settes lav, lukkes transistorbryteren M1 og vi har låst spenningsverdien til kondensatoren $C_{s}$. Deretter settes «NRE» lav slik at vi kan lese ut verdien fra $C_{s}$ til «Out» gjennom transistorforsterekeren M3. Etter å ha lest ut verdien gjennom transistorforsterker M3 og transistorbryter M4, settes «NRE» høy for å lukke «Out». Deretter settes «Erase» høy, slik at den aktive transistorlasten lader ut kondensatoren og dermed forbereder den til å ta i mot en ny spenningsverdi fra en ny eksponering.\\
+\newline
+Ettersom virkemåten til den analoge kretsen stort sett er utarbeidet ligger hovedvekten i det gjenstående arbeidet i å dimensjonere MOSFETene slik at de får et riktig lengde-breddeforhold ($W/L$) i forhold til ønsket oppførsel som beskrevet i seksjon \ref{ssec:Analog_krets_teori}. Ettersom både M1 og M4 benyttes som brytere er det hensiktsmessig å studere kretsen med disse transistorene som faktiske brytere. Ved en tilstand der $C_{s}$ lades opp av en tidsvarierende strøm $i(t)$ vil vi i følge
+\begin{equation}
+    V_{C_{s}} = \frac{1}{C_{s}} \int_{0}^{T} i(t) dt
+    \label{eq:voltageCap}
+\end{equation}
+kunne estimere hvor stort spenningspotensial vi vil kunne oppleve på gaten til M3 ved endt eksponering. 
