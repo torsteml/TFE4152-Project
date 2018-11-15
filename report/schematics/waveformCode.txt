@@ -1,0 +1,12 @@
+{signal: [
+  {name: 'clk', wave: '0p.|............'},
+  {name: 'Init', wave: '010.............'},
+  {name: 'Erase', wave: '1.0...........1.'},
+  {name: 'Expose', wave: '0.1..0..........'},
+  {name: 'NRE_R1', wave: '1.....0..1......'},
+  {name: 'NRE_R2', wave: '1.........0..1..'},
+  {name: 'ADC', wave: '0......10..10...'},
+]}
+
+
+https://wavedrom.com/editor.html
