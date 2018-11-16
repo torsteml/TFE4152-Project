@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Tue Oct 23 15:46:46 2018
+	Date: Fri Nov 16 15:21:35 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Analogpart.cir
 	Analysis: Transient
 
@@ -279,14 +279,14 @@
 	Total number of timepoints.....................: 162
 	Number of timepoints accepted..................: 152
 	Number of timepoints rejected..................: 10
-	Total analysis time (sec)......................: 0.159
-	Transient analysis time (sec)..................: 0.147
-	Time spent in device loading (sec).............: 0.037
-	Time spent in L-U decomposition (sec)..........: 0.005
+	Total analysis time (sec)......................: 0.041
+	Transient analysis time (sec)..................: 0.038
+	Time spent in device loading (sec).............: 0.009
+	Time spent in L-U decomposition (sec)..........: 0.001
 	Time spent in matrix reordering (sec)..........: 0
-	Time spent in matrix solving (sec).............: 0.004
-	Time spent in transient L-U decomposition (sec): 0.004
-	Time spent in transient matrix solving (sec)...: 0.004
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0.001
+	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 
