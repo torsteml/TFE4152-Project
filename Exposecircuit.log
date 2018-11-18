@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Sat Nov 10 14:28:19 2018
+	Date: Sun Nov 18 20:23:15 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\Exposecircuit.cir
 	Analysis: Transient
 
@@ -192,33 +192,50 @@
    177:  .param FS = 1k; ! Sampling clock frequency
    178:  .param CLK_PERIOD = {1/FS} ! Sampling clock period
    179:  .param EXPOSE_DLY = {CLK_PERIOD} ! Delay for EXPOSE signal
-   180:  .param ERASE_DLY = {6*CLK_PERIOD + EXPOSURETIME} ! Delay for ERASE signal
-   181:  
+   180:  .param NRE_DLY = {2*CLK_PERIOD + EXPOSURETIME} ! Delay for NRE signal
+   181:  .param ERASE_DLY = {6*CLK_PERIOD + EXPOSURETIME} ! Delay for ERASE signal
    182:  
-   183:  VDD Vdd 0 dc VDD
-   184:  X1 Vdd 0 EXPOSE ERASE Out Exposecircuit
-   185:  
-   186:  VEXPOSE EXPOSE 0 dc 0 pulse(0 VDD EXPOSE_DLY TRF TRF EXPOSURETIME PERIOD)
-   187:  VERASE ERASE 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
+   183:  
+   184:  VDD Vdd 0 dc VDD
+   185:  *X1 Vdd 0 EXPOSE ERASE Out Exposecircuit
+   186:  X2 Vdd 0 Expose Erase NRE Out OnePixel
+   187:  
    188:  
-   189:  .plot V(EXPOSE) V(ERASE)
-   190:  .plot V(Out)
-   191:  
+   189:  VEXPOSE EXPOSE 0 dc 0 pulse(0 VDD EXPOSE_DLY TRF TRF EXPOSURETIME PERIOD)
+   190:  VERASE ERASE 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
+   191:  VNRE NRE 0 dc 0 pulse(VDD 0 NRE_DLY TRF TRF CLK_PERIOD PERIOD)
    192:  
-   193:  .subckt Exposecircuit Vdd Vss Expose Erase N2
-   194:  XPD1 Vdd N1 PhotoDiode
-   195:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=10u
-   196:  MN2 N2 Erase Vss Vss NMOS L=0.7u W=2u !Smallest possible area to minimize leakagecurrent
-   197:  CS N2 Vss 3p
-   198:  .ends
-   199:  
-   200:  .subckt PhotoDiode  VDD N1_R1C1
-   201:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
-   202:  d1 N1_R1C1 vdd dwell 1
-   203:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
-   204:  Cd1 N1_R1C1 VDD 30f
-   205:  .ends 
-   206:  .tran 0.0001 0.060
+   193:  .plot V(EXPOSE) V(ERASE) V(NRE) V(Out)
+   194:  *.plot V(Out)
+   195:  
+   196:  
+   197:  .subckt OnePixel Vdd Vss Expose Erase NRE Out
+   198:  XExp Vdd Vss Expose Erase N2 Exposecircuit
+   199:  MP3 Vss N2 N3 Vdd PMOS L=1u W=5u
+   200:  MP4 N3 NRE Out Vdd PMOS L=0.7u W=10u
+   201:  *Xload Vdd Vss Out LoadTransistor
+   202:  .plot V(N2)
+   203:  .ends
+   204:  
+   205:  .subckt LoadTransistor Vdd Vss Gate
+   206:  MC Gate Gate Vdd Vdd PMOS L=2u W=10u
+   207:  CC Gate Vss 3p
+   208:  .ends
+   209:  
+   210:  .subckt Exposecircuit Vdd Vss Expose Erase N2
+   211:  XPD1 Vdd N1 PhotoDiode
+   212:  MN1 N1 Expose N2 Vss NMOS L=0.7u W=10u
+   213:  MN2 N2 Erase Vss Vss NMOS L=2u W=2u
+   214:  CS N2 Vss 1.5p
+   215:  .ends
+   216:  
+   217:  .subckt PhotoDiode  VDD N1_R1C1
+   218:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
+   219:  d1 N1_R1C1 vdd dwell 1
+   220:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
+   221:  Cd1 N1_R1C1 VDD 30f
+   222:  .ends 
+   223:  .tran 0.0001 0.060
 
 ***************************  Model Parameters  ****************************
 
@@ -241,18 +258,18 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 1124
-	Number of iterations for transient analysis....: 1102
-	Total number of timepoints.....................: 393
-	Number of timepoints accepted..................: 341
-	Number of timepoints rejected..................: 52
-	Total analysis time (sec)......................: 0.03
-	Transient analysis time (sec)..................: 0.029
-	Time spent in device loading (sec).............: 0.003
-	Time spent in L-U decomposition (sec)..........: 0
+	Total number of iterations.....................: 1340
+	Number of iterations for transient analysis....: 1317
+	Total number of timepoints.....................: 440
+	Number of timepoints accepted..................: 392
+	Number of timepoints rejected..................: 48
+	Total analysis time (sec)......................: 0.058
+	Transient analysis time (sec)..................: 0.057
+	Time spent in device loading (sec).............: 0.004
+	Time spent in L-U decomposition (sec)..........: 0.001
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
-	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient L-U decomposition (sec): 0.001
 	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
@@ -262,8 +279,15 @@ Circuit: Expose circuit
 Warning: premature EOF
 Warning: parameter xl not supported; value ignored
 Warning: parameter xw not supported; value ignored
-Warning: Pd = 0 is less than W for m:1:n2 in model nmos.
-Warning: Ps = 0 is less than W for m:1:n2 in model nmos.
-Warning: Pd = 0 is less than W for m:1:n1 in model nmos.
-Warning: Ps = 0 is less than W for m:1:n1 in model nmos.
+Warning: parameter xl not supported; value ignored
+Warning: parameter xw not supported; value ignored
+Warning: Pd = 0 is less than W for m:2:p4 in model pmos.
+Warning: Ps = 0 is less than W for m:2:p4 in model pmos.
+Warning: Pd = 0 is less than W for m:2:p3 in model pmos.
+Warning: Ps = 0 is less than W for m:2:p3 in model pmos.
+Warning: Pd = 0 is less than W for m:2:exp:n2 in model nmos.
+Warning: Ps = 0 is less than W for m:2:exp:n2 in model nmos.
+Warning: Pd = 0 is less than W for m:2:exp:n1 in model nmos.
+Warning: Ps = 0 is less than W for m:2:exp:n1 in model nmos.
+Warning: Node out has less than two connections
 
