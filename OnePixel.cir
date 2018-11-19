@@ -1,6 +1,6 @@
 [aimspice]
 [description]
-1484
+1483
 OnePixel
 
 .include p18_cmos_models_tt.inc
@@ -9,18 +9,18 @@ OnePixel
 XPD1 Vdd N1 PhotoDiode
 MN1 N1 Expose N2 0 NMOS L=0.7u W=10u
 MN2 N2 Erase 0 0 NMOS L=2u W=2u
-CS N2 0 0.833p
-MP3 0 N2 N3 Vdd PMOS L=2u W=10u
+CS N2 0 1.3p
+MP3 0 N2 N3 Vdd PMOS L=0.7u W=10u
 MP4 N3 NRE Out Vdd PMOS L=0.7u W=10u
 
-MC Out Out Vdd Vdd PMOS L=2u W=10u
+MC Out Out Vdd Vdd PMOS L=2u W=2u
 CC Out 0 3p
 
 *Testbench
 
-.param Ipd_1 = 750p ! Photodiode current, range [50 pA, 750 pA]
+.param Ipd_1 = 50p ! Photodiode current, range [50 pA, 750 pA]
 .param VDD = 1.8 ! Supply voltage
-.param EXPOSURETIME = 2m ! Exposure time, range [2 ms, 30 ms]
+.param EXPOSURETIME = 30m ! Exposure time, range [2 ms, 30 ms]
 
 .param TRF = {EXPOSURETIME/100} ! Risetime and falltime of EXPOSURE and ERASE signals
 .param PW = {EXPOSURETIME} ! Pulsewidth of EXPOSURE and ERASE signals
