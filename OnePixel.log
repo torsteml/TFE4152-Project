@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Mon Nov 19 09:17:43 2018
+	Date: Mon Nov 19 10:10:27 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\OnePixel.cir
 	Analysis: Transient
 
@@ -185,7 +185,7 @@
    170:  XPD1 Vdd N1 PhotoDiode
    171:  MN1 N1 Expose N2 0 NMOS L=0.7u W=10u
    172:  MN2 N2 Erase 0 0 NMOS L=2u W=2u
-   173:  CS N2 0 0.833p
+   173:  CS N2 0 1.6p
    174:  MP3 0 N2 N3 Vdd PMOS L=0.7u W=10u
    175:  MP4 N3 NRE Out Vdd PMOS L=0.7u W=10u
    176:  
@@ -194,9 +194,9 @@
    179:  
    180:  *Testbench
    181:  
-   182:  .param Ipd_1 = 50p ! Photodiode current, range [50 pA, 750 pA]
+   182:  .param Ipd_1 = 750p ! Photodiode current, range [50 pA, 750 pA]
    183:  .param VDD = 1.8 ! Supply voltage
-   184:  .param EXPOSURETIME = 30m ! Exposure time, range [2 ms, 30 ms]
+   184:  .param EXPOSURETIME = 2m ! Exposure time, range [2 ms, 30 ms]
    185:  
    186:  .param TRF = {EXPOSURETIME/100} ! Risetime and falltime of EXPOSURE and ERASE signals
    187:  .param PW = {EXPOSURETIME} ! Pulsewidth of EXPOSURE and ERASE signals
@@ -244,18 +244,18 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 511
-	Number of iterations for transient analysis....: 487
-	Total number of timepoints.....................: 169
-	Number of timepoints accepted..................: 149
-	Number of timepoints rejected..................: 20
-	Total analysis time (sec)......................: 0.032
-	Transient analysis time (sec)..................: 0.031
-	Time spent in device loading (sec).............: 0.006
-	Time spent in L-U decomposition (sec)..........: 0.001
+	Total number of iterations.....................: 1602
+	Number of iterations for transient analysis....: 1579
+	Total number of timepoints.....................: 512
+	Number of timepoints accepted..................: 447
+	Number of timepoints rejected..................: 65
+	Total analysis time (sec)......................: 0.12
+	Transient analysis time (sec)..................: 0.119
+	Time spent in device loading (sec).............: 0.019
+	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
-	Time spent in transient L-U decomposition (sec): 0.001
+	Time spent in transient L-U decomposition (sec): 0
 	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
