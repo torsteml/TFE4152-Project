@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Mon Nov 19 09:02:12 2018
+	Date: Tue Nov 20 14:49:56 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\FourPixel.cir
 	Analysis: Transient
 
@@ -258,14 +258,14 @@
 	Total number of timepoints.....................: 191
 	Number of timepoints accepted..................: 167
 	Number of timepoints rejected..................: 24
-	Total analysis time (sec)......................: 0.048
-	Transient analysis time (sec)..................: 0.047
-	Time spent in device loading (sec).............: 0.01
+	Total analysis time (sec)......................: 0.046
+	Transient analysis time (sec)..................: 0.045
+	Time spent in device loading (sec).............: 0.004
 	Time spent in L-U decomposition (sec)..........: 0
-	Time spent in matrix reordering (sec)..........: 0
-	Time spent in matrix solving (sec).............: 0.001
+	Time spent in matrix reordering (sec)..........: 0.001
+	Time spent in matrix solving (sec).............: 0.002
 	Time spent in transient L-U decomposition (sec): 0
-	Time spent in transient matrix solving (sec)...: 0.001
+	Time spent in transient matrix solving (sec)...: 0.002
 
 ***************************  Kernel Messages  *****************************
 

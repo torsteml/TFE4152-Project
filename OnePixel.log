@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Mon Nov 19 10:10:27 2018
+	Date: Mon Nov 19 13:56:08 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\OnePixel.cir
 	Analysis: Transient
 
@@ -196,7 +196,7 @@
    181:  
    182:  .param Ipd_1 = 750p ! Photodiode current, range [50 pA, 750 pA]
    183:  .param VDD = 1.8 ! Supply voltage
-   184:  .param EXPOSURETIME = 2m ! Exposure time, range [2 ms, 30 ms]
+   184:  .param EXPOSURETIME = 15m ! Exposure time, range [2 ms, 30 ms]
    185:  
    186:  .param TRF = {EXPOSURETIME/100} ! Risetime and falltime of EXPOSURE and ERASE signals
    187:  .param PW = {EXPOSURETIME} ! Pulsewidth of EXPOSURE and ERASE signals
@@ -212,16 +212,17 @@
    197:  VERASE Erase 0 dc 0 pulse(0 VDD ERASE_DLY TRF TRF CLK_PERIOD PERIOD)
    198:  VNRE NRE 0 dc 0 pulse(VDD 0 NRE_DLY TRF TRF CLK_PERIOD PERIOD)
    199:  
-   200:  .plot V(EXPOSE) V(ERASE) V(NRE) V(Out) V(N2) V(N3)
-   201:  
-   202:  .subckt PhotoDiode  VDD N1_R1C1
-   203:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
-   204:  d1 N1_R1C1 vdd dwell 1
-   205:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
-   206:  Cd1 N1_R1C1 VDD 30f
-   207:  .ends 
-   208:  
-   209:  .tran 0.0001 0.060
+   200:  .plot V(EXPOSE) V(ERASE) V(NRE) V(Out) 
+   201:  .plot V(N1) V(N2) V(N3)
+   202:  
+   203:  .subckt PhotoDiode  VDD N1_R1C1
+   204:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
+   205:  d1 N1_R1C1 vdd dwell 1
+   206:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
+   207:  Cd1 N1_R1C1 VDD 30f
+   208:  .ends 
+   209:  
+   210:  .tran 0.0001 0.060
 
 ***************************  Model Parameters  ****************************
 
@@ -244,14 +245,14 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 1602
-	Number of iterations for transient analysis....: 1579
-	Total number of timepoints.....................: 512
-	Number of timepoints accepted..................: 447
-	Number of timepoints rejected..................: 65
-	Total analysis time (sec)......................: 0.12
-	Transient analysis time (sec)..................: 0.119
-	Time spent in device loading (sec).............: 0.019
+	Total number of iterations.....................: 502
+	Number of iterations for transient analysis....: 479
+	Total number of timepoints.....................: 167
+	Number of timepoints accepted..................: 153
+	Number of timepoints rejected..................: 14
+	Total analysis time (sec)......................: 0.029
+	Transient analysis time (sec)..................: 0.029
+	Time spent in device loading (sec).............: 0.001
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
