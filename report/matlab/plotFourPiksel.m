@@ -1,0 +1,3 @@
+function plotFourPiksel
+    array = 
+end
