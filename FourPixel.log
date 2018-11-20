@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Tue Nov 20 14:49:56 2018
+	Date: Tue Nov 20 14:58:50 2018
 	Circuit File: C:\Users\marku\OneDrive – NTNU\Integrerte kretser\TFE4152-Project\FourPixel.cir
 	Analysis: Transient
 
@@ -211,26 +211,25 @@
    196:  
    197:  .plot V(EXPOSE) V(ERASE) V(Out1) V(Out2) V(NRE_R1) V(NRE_R2)
    198:  
-   199:  
-   200:  .subckt OnePixel Vdd Vss Expose Erase NRE Out
-   201:  XPD1 Vdd N1 PhotoDiode
-   202:  MN1 N1 Expose N2 0 NMOS L=0.7u W=10u
-   203:  MN2 N2 Erase 0 0 NMOS L=2u W=2u
-   204:  CS N2 0 1.3p
-   205:  MP3 0 N2 N3 Vdd PMOS L=0.7u W=10u
-   206:  MP4 N3 NRE Out Vdd PMOS L=0.7u W=10u
-   207:  
-   208:  MC Out Out Vdd Vdd PMOS L=2u W=2u
-   209:  CC Out 0 3p
-   210:  .ends
-   211:  
-   212:  .subckt PhotoDiode  VDD N1_R1C1
-   213:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
-   214:  d1 N1_R1C1 vdd dwell 1
-   215:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
-   216:  Cd1 N1_R1C1 VDD 30f
-   217:  .ends 
-   218:  .tran 0.0001 0.060
+   199:  .subckt OnePixel Vdd Vss Expose Erase NRE Out
+   200:  XPD1 Vdd N1 PhotoDiode
+   201:  MN1 N1 Expose N2 0 NMOS L=0.7u W=10u
+   202:  MN2 N2 Erase 0 0 NMOS L=2u W=2u
+   203:  CS N2 0 1.3p
+   204:  MP3 0 N2 N3 Vdd PMOS L=0.7u W=10u
+   205:  MP4 N3 NRE Out Vdd PMOS L=0.7u W=10u
+   206:  
+   207:  MC Out Out Vdd Vdd PMOS L=2u W=2u
+   208:  CC Out 0 3p
+   209:  .ends
+   210:  
+   211:  .subckt PhotoDiode  VDD N1_R1C1
+   212:  I1_R1C1  VDD   N1_R1C1   DC  Ipd_1
+   213:  d1 N1_R1C1 vdd dwell 1
+   214:  .model dwell d cj0=1e-14 is=1e-12 m=0.5 bv=40
+   215:  Cd1 N1_R1C1 VDD 30f
+   216:  .ends 
+   217:  .tran 0.0001 0.06
 
 ***************************  Model Parameters  ****************************
 
@@ -242,7 +241,7 @@
 **************************  Analysis Parameters  **************************
 
 	Stepsize ............ : 0.0001
-	Final time .......... : 0.060
+	Final time .......... : 0.06
 	Use Initial Conditions: Off
 
 
@@ -258,14 +257,14 @@
 	Total number of timepoints.....................: 191
 	Number of timepoints accepted..................: 167
 	Number of timepoints rejected..................: 24
-	Total analysis time (sec)......................: 0.046
-	Transient analysis time (sec)..................: 0.045
-	Time spent in device loading (sec).............: 0.004
-	Time spent in L-U decomposition (sec)..........: 0
-	Time spent in matrix reordering (sec)..........: 0.001
-	Time spent in matrix solving (sec).............: 0.002
-	Time spent in transient L-U decomposition (sec): 0
-	Time spent in transient matrix solving (sec)...: 0.002
+	Total analysis time (sec)......................: 0.048
+	Transient analysis time (sec)..................: 0.047
+	Time spent in device loading (sec).............: 0.018
+	Time spent in L-U decomposition (sec)..........: 0.002
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0.002
+	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 
