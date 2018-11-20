@@ -1,5 +1,5 @@
 function plotFourPiksel
-    array = importdata("Result50v304pixel.csv");
+    array = importdata("Result750v24pixel.csv");
     t = array.data(:,1);
     tms = t.*1000;
     vexpose = array.data(:,4);
@@ -13,10 +13,11 @@ function plotFourPiksel
     
     
     hold on;
-    xlim([0,50])
+    xlim([0,11])
     ylim([-0.2 2.0])
     xlabel('Tid[ms]')
     ylabel('Spenning[V]')
+    grid on;
     
     p1 = plot(tms,vexpose,'LineWidth',2);
     p2 = plot(tms,verase,'LineWidth',2);
