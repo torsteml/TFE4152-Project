@@ -1,5 +1,5 @@
 function plotSinglePiksel
-    array = importdata("Result50v301pixel.csv");
+    array = importdata("Result750v21pixel.csv");
     t = array.data(:,1);
     tms = t.*1000;
     vdd = array.data(:,2);
@@ -12,7 +12,7 @@ function plotSinglePiksel
     vout = array.data(:,9);
     
     hold on;
-    xlim([0,50])
+    xlim([0,11])
     ylim([-0.2 2.0])
     xlabel('Tid[ms]')
     ylabel('Spenning[V]')
